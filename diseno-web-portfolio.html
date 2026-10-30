@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño web portfolio | Alejandro Rodríguez</title>
+    <link rel="stylesheet" href="css/proyecto.css">
+    <script src="js/menu.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Ephesis&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Estructura HTML Header -->
+
+    <header class="Header">
+        <a href="index.html" class="Header-logo" title="Ir a la página de inicio">
+            <img class="Header-img" src="img/logo-arzmz.svg" alt="ARZMZ Logo" loading="lazy">
+        </a>
+        <button class="Header-button" type="button" title="Abrir menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Header-icon Header-icon--open"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Header-icon Header-icon--close"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+        </button>
+        <nav class="Header-nav">
+            <ul class="Header-ul">
+                <li class="Header-li Header-li--Home"><a href="index.html" title="Ir a la página de inicio">INICIO</a></li>
+                <li class="Header-li Header-li--Proyectos"><a href="proyectos.html" title="Ver todos los proyectos">PROYECTOS</a></li>
+                <li class="Header-li Header-li--Sobremi"><a href="sobremi.html" title="Conocer más sobre Alejandro Rodríguez">SOBRE MÍ</a></li>
+                <li class="Header-li Header-li--Contacto"><a href="contacto.html" title="Ir a la página de contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Estructura HTML Subheader -->
+
+    <section class="Subheader">
+        <h1 class="Subheader-h1">· 2026 - portfolio / ARZMZ © </h1>
+        <div class="Subheader-Location">
+            <img class="Location-img" src="img/location-pin-svgrepo-com.svg" alt="Ubicación" loading="lazy">
+            <h2 class="Location-h2">MADRID ⇀ WORLDWIDE</h2>
+        </div>
+    </section>
+
+
+    <!-- Estructura HTML Contenido -->
+
+    <section class="ProjectHero">
+        <picture>
+            <source srcset="img/proyectos/portfolio-inicio-escritorio.webp" type="image/webp">
+            <img class="ProjectHero-img" src="img/proyectos/portfolio-inicio-escritorio.jpg" alt="Página de inicio del portfolio en escritorio" loading="lazy">
+        </picture>
+        <div class="ProjectHero-overlay"></div>
+        <div class="ProjectHero-chips">
+            <span class="Chip Chip--primary">Web</span>
+            <span class="Chip Chip--dark">2026</span>
+        </div>
+        <div class="ProjectHero-info">
+            <h2 class="ProjectHero-title">DISEÑO WEB PORTFOLIO</h2>
+            <ul class="ProjectHero-tags">
+                <li>Diseño web</li>
+                <li>HTML y CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Estructura HTML primera sección -->
+
+    <section class="Summary">
+        <div class="Summary-header">
+            <span class="Summary-number">01</span>
+            <div class="Summary-title">
+                <span class="Summary-dot"></span>
+                <h3 class="Summary-h3">RESUMEN DEL PROYECTO</h3>
+            </div>
+        </div>
+        <div class="Summary-body">
+            <ul class="Summary-list">
+                <li class="Summary-item">
+                    <p class="Summary-label">CATEGORÍA</p>
+                    <p class="Summary-category">Web</p>
+                </li>
+                <li class="Summary-item">
+                    <p class="Summary-label">AÑO</p>
+                    <p class="Summary-category">2026</p>
+                </li>
+                <li class="Summary-item">
+                    <p class="Summary-label">ROL</p>
+                    <p class="Summary-category">Diseñador UX/UI y Frontend</p>
+                </li>
+                <li class="Summary-item">
+                    <p class="Summary-label">CLIENTE</p>
+                    <p class="Summary-category">Proyecto personal (Máster CEI)</p>
+                </li>
+                <li class="Summary-item Summary-item--last">
+                    <p class="Summary-label">HERRAMIENTAS</p>
+                    <p class="Summary-category">Figma · HTML · CSS · JavaScript</p>
+                </li>
+            </ul>
+            <div class="Summary-content">
+                <p class="Summary-lead">
+                    <span class="Summary-strong">Mi portfolio web -</span>
+                    un espacio para
+                    <mark class="Summary-highlight Summary-strong">documentar mi evolución</mark>
+                    y abrir la puerta a nuevos proyectos.
+                </p>
+                <div class="Summary-Text">
+                    <p class="Text-p">Con este proyecto busco documentar mi evolución en el diseño gráfico, el diseño
+                        UX/UI y el diseño web.</p>
+                    <p class="Text-p">La web funciona también como vía de contacto para trabajos y proyectos. Está
+                        desarrollada con HTML, CSS y JavaScript nativo como proyecto final del Máster en Diseño UX/UI
+                        y Diseño Web de CEI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estructura HTML segunda sección -->
+
+    <section class="Challenge">
+        <div class="Challenge-header">
+            <span class="Challenge-number">02</span>
+            <div class="Challenge-title">
+                <span class="Challenge-dot"></span>
+                <h3 class="Challenge-h3">El reto</h3>
+            </div>
+        </div>
+        <div class="Challenge-body">
+            <div class="Challenge-intro">
+                <h4 class="Challenge-heading">El problema a resolver<span class="Challenge-headingDot"></span></h4>
+                <p class="Challenge-text">Necesitaba una web propia que reuniese mis proyectos y que yo mismo pudiese
+                    construir de principio a fin, sin plantillas ni librerías.</p>
+            </div>
+            <ul class="Challenge-cards">
+                <li class="Challenge-card">
+                    <h4 class="Challenge-cardTitle">1. PROBLEMA O RETO</h4>
+                    <p class="Challenge-cardText">Diseñar y programar una web completa, adaptable a cualquier pantalla y con módulos de JavaScript propios.</p>
+                </li>
+                <li class="Challenge-card">
+                    <h4 class="Challenge-cardTitle">2. RESTRICCIONES</h4>
+                    <p class="Challenge-cardText">Solo HTML, CSS y JavaScript nativo, sin librerías, con la fecha de la convocatoria y compaginándolo con mi trabajo y el poco tiempo personal disponible.</p>
+                </li>
+                <li class="Challenge-card">
+                    <h4 class="Challenge-cardTitle">3. APRENDIZAJE</h4>
+                    <p class="Challenge-cardText">La mayor dificultad ha sido JavaScript: cada módulo lo he escrito yo, entendiendo cada línea antes de pasar a la siguiente.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="Challenge-process">
+            <h4 class="Challenge-processLabel">Proceso seguido</h4>
+            <ol class="Challenge-steps">
+                <li class="Challenge-step Challenge-step--first">
+                    <span class="Challenge-stepNumber">01</span>
+                    <span class="Challenge-stepName">Diseño en Figma</span>
+                </li>
+                <li class="Challenge-step Challenge-step--second">
+                    <span class="Challenge-stepNumber">02</span>
+                    <span class="Challenge-stepName">Maquetación HTML</span>
+                </li>
+                <li class="Challenge-step Challenge-step--third">
+                    <span class="Challenge-stepNumber">03</span>
+                    <span class="Challenge-stepName">Estilos CSS</span>
+                </li>
+                <li class="Challenge-step Challenge-step--fourth">
+                    <span class="Challenge-stepNumber">04</span>
+                    <span class="Challenge-stepName">Responsive</span>
+                </li>
+                <li class="Challenge-step Challenge-step--fifth">
+                    <span class="Challenge-stepNumber">05</span>
+                    <span class="Challenge-stepName">JavaScript</span>
+                </li>
+                <li class="Challenge-step Challenge-step--sixth">
+                    <span class="Challenge-stepNumber">06</span>
+                    <span class="Challenge-stepName">Publicación</span>
+                </li>
+            </ol>
+            <div class="Challenge-divider"></div>
+        </div>
+    </section>
+
+    <!-- Estructura HTML sección documentación -->
+
+
+    <section class="Documentation">
+        <div class="Documentation-header">
+            <span class="Documentation-number">03</span>
+            <div class="Documentation-title">
+                <span class="Documentation-dot"></span>
+                <h3 class="Documentation-h3">Documentación</h3>
+            </div>
+        </div>
+        <div class="Documentation-body">
+            <div class="Documentation-gallery">
+                <p class="Documentation-label">Imágenes del proceso</p>
+                <div class="Documentation-grid">
+                    <figure class="Documentation-media Documentation-media--tall Documentation-media--light">
+                        <div class="Specimen">
+                            <p class="Specimen-name">Climate Crisis</p>
+                            <p class="Specimen-sample Specimen-sample--display">Aa Bb</p>
+                            <p class="Specimen-name">Outfit</p>
+                            <p class="Specimen-sample">Aa Bb Cc 123</p>
+                        </div>
+                        <figcaption class="Documentation-caption">Tipografías</figcaption>
+                    </figure>
+                    <div class="Documentation-stack">
+                        <figure class="Documentation-media Documentation-media--small Documentation-media--light">
+                            <ul class="Palette">
+                                <li class="Palette-color Palette-color--webnegro"><span class="Palette-hex">#1E1E1E</span></li>
+                                <li class="Palette-color Palette-color--webblanco"><span class="Palette-hex">#EEEDF6</span></li>
+                                <li class="Palette-color Palette-color--webverde"><span class="Palette-hex">#5CF87D</span></li>
+                                <li class="Palette-color Palette-color--webgris"><span class="Palette-hex">#454545</span></li>
+                            </ul>
+                            <figcaption class="Documentation-caption">Paleta de color</figcaption>
+                        </figure>
+                        <figure class="Documentation-media Documentation-media--small Documentation-media--light">
+                            <picture>
+                        <source srcset="img/proyectos/portfolio-contacto.webp" type="image/webp">
+                        <img class="Documentation-img Documentation-img--captura" src="img/proyectos/portfolio-contacto.jpg" alt="Página de contacto del portfolio con el formulario" loading="lazy">
+                    </picture>
+                            <figcaption class="Documentation-caption">Formulario de contacto</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <figure class="Documentation-media Documentation-media--wide Documentation-media--light">
+                    <picture>
+                        <source srcset="img/proyectos/portfolio-pagina-proyecto.webp" type="image/webp">
+                        <img class="Documentation-img Documentation-img--captura" src="img/proyectos/portfolio-pagina-proyecto.jpg" alt="Sección de documentación de una página de proyecto del portfolio" loading="lazy">
+                    </picture>
+                    <figcaption class="Documentation-caption">Plantilla de proyecto</figcaption>
+                </figure>
+            </div>
+            <div class="Documentation-content">
+                <div class="Documentation-intro">
+                    <p class="Documentation-label">Caso de estudio</p>
+                    <h4 class="Documentation-heading">Las piezas del sistema</h4>
+                </div>
+                <ul class="Documentation-list">
+                    <li class="Documentation-item">
+                        <h5 class="Documentation-itemTitle">Tipografías</h5>
+                        <p class="Documentation-itemText">Climate Crisis para los titulares, con mucha personalidad, y Outfit para los textos, limpia y legible. Ambas se cargan desde Google Fonts.</p>
+                    </li>
+                    <li class="Documentation-item">
+                        <h5 class="Documentation-itemTitle">Paleta de color</h5>
+                        <p class="Documentation-itemText">Negro #1E1E1E, blanco #EEEDF6, verde #5CF87D como color de acento y gris #454545, definidos como variables CSS.</p>
+                    </li>
+                    <li class="Documentation-item">
+                        <h5 class="Documentation-itemTitle">Formulario de contacto</h5>
+                        <p class="Documentation-itemText">El formulario está maquetado con una etiqueta en cada campo y no realiza ningún envío real, como pide el proyecto.</p>
+                    </li>
+                    <li class="Documentation-item">
+                        <h5 class="Documentation-itemTitle">Plantilla de proyecto</h5>
+                        <p class="Documentation-itemText">Las cinco páginas de proyecto comparten la misma estructura y una sola hoja de estilos, lo que facilita mantener y ampliar la web.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estructura HTML sección solución -->
+
+    <section class="Solution">
+        <div class="Solution-header">
+            <div class="Solution-index">
+                <span class="Solution-number">04</span>
+                <div class="Solution-title">
+                    <span class="Solution-dot"></span>
+                    <h3 class="Solution-h3">La solución</h3>
+                </div>
+            </div>
+            <h4 class="Solution-heading">Hecho pieza a pieza<span class="Solution-headingDot"></span></h4>
+        </div>
+        <div class="Solution-body">
+            <div class="Solution-decisions">
+                <p class="Solution-label">Decisiones de diseño</p>
+                <ol class="Solution-list">
+                    <li class="Solution-item">
+                        <span class="Solution-itemNumber">01</span>
+                        <p class="Solution-itemText">Plantilla única para los proyectos: las mismas secciones y un solo CSS compartido.</p>
+                    </li>
+                    <li class="Solution-item">
+                        <span class="Solution-itemNumber">02</span>
+                        <p class="Solution-itemText">JavaScript nativo por módulos: menú, filtro de proyectos y lightbox, cada uno en su propio archivo.</p>
+                    </li>
+                    <li class="Solution-item">
+                        <span class="Solution-itemNumber">03</span>
+                        <p class="Solution-itemText">Imágenes optimizadas: WEBP con alternativa en JPG, carga diferida y SVG siempre que es posible.</p>
+                    </li>
+                </ol>
+            </div>
+            <figure class="Solution-media Solution-media--main">
+                <picture>
+                    <source srcset="img/proyectos/portfolio-filtro-proyectos.webp" type="image/webp">
+                    <img class="Solution-img Solution-img--captura" src="img/proyectos/portfolio-filtro-proyectos.jpg" alt="Página de proyectos con el filtro de branding activo" loading="lazy">
+                </picture>
+                <figcaption class="Solution-caption">Resultado final — filtro de proyectos</figcaption>
+            </figure>
+        </div>
+        <div class="Solution-gallery">
+            <figure class="Solution-media">
+                <picture>
+                    <source srcset="img/proyectos/portfolio-sobre-mi.webp" type="image/webp">
+                    <img class="Solution-img Solution-img--captura" src="img/proyectos/portfolio-sobre-mi.jpg" alt="Página Sobre mí del portfolio" loading="lazy">
+                </picture>
+                <figcaption class="Solution-caption">Sobre mí</figcaption>
+            </figure>
+            <figure class="Solution-media">
+                <picture>
+                    <source srcset="img/proyectos/hm-hospitales-cita-confirmada.webp" type="image/webp">
+                    <img class="Solution-img Solution-img--captura" src="img/proyectos/hm-hospitales-cita-confirmada.jpg" alt="Pantalla de cita confirmada con número de confirmación, fecha y especialista" loading="lazy">
+                </picture>
+                <figcaption class="Solution-caption">Versión móvil</figcaption>
+            </figure>
+            <figure class="Solution-media">
+                <picture>
+                    <source srcset="img/proyectos/hm-hospitales-seleccion-especialista.webp" type="image/webp">
+                    <img class="Solution-img Solution-img--captura" src="img/proyectos/hm-hospitales-seleccion-especialista.jpg" alt="Tarjetas de especialistas con etiquetas de disponibilidad por colores" loading="lazy">
+                </picture>
+                <figcaption class="Solution-caption">Menú móvil</figcaption>
+            </figure>
+        </div>
+
+        <!-- Estructura HTML siguiente proyecto -->
+
+        <nav class="NextProject" aria-label="Siguiente proyecto">
+            <div class="NextProject-top">
+                <p class="NextProject-label">Siguiente proyecto</p>
+                <a class="NextProject-all" href="proyectos.html" title="Ver todos los proyectos">Ver todos los proyectos →</a>
+            </div>
+            <a class="NextProject-card" href="rediseno-app-hm-hospitales.html" title="Ver el proyecto Rediseño app HM Hospitales">
+                <picture>
+                    <source srcset="img/proyectos/hm-hospitales-flujo-cita.webp" type="image/webp">
+                    <img class="NextProject-img" src="img/proyectos/hm-hospitales-flujo-cita.jpg" alt="Portada del proyecto Rediseño app HM Hospitales" loading="lazy">
+                </picture>
+                <div class="NextProject-chips">
+                    <span class="NextProject-chip NextProject-chip--primary">UX/UI</span>
+                    <span class="NextProject-chip NextProject-chip--dark">2025</span>
+                </div>
+                <div class="NextProject-info">
+                    <h4 class="NextProject-title">REDISEÑO APP HM HOSPITALES</h4>
+                    <span class="NextProject-arrow">
+                        <img src="img/arrow-up-right.svg" alt="Flecha hacia el proyecto" width="9.26562" height="9.27344" loading="lazy">
+                    </span>
+                </div>
+            </a>
+        </nav>
+    </section>
+
+    <!-- Estructura Footer -->
+
+    <footer class="Footer">
+        <img class="Footer-img" src="img/logo-arzmz.svg" alt="ARZMZ Logo" loading="lazy">
+        <p class="Footer-p">© 2026 Alejandro Rodríguez. Todos los derechos reservados.</p>
+        <ul class="Footer-ul">
+            <li><a href="https://www.linkedin.com/in/alexrodriguezmu%C3%B1oz/" class="Footer-linkedin" title="Perfil de LinkedIn de Alejandro Rodríguez" target="_blank" rel="noreferrer">LINKEDIN</a></li>
+            <li><a href="https://www.behance.net/alejandrodrigu361" class="Footer-behance" title="Portfolio de Behance de Alejandro Rodríguez" target="_blank" rel="noreferrer">BEHANCE</a></li>
+            <li><a href="https://github.com/ALEXRZMZ" class="Footer-github" title="Perfil de GitHub de Alejandro Rodríguez" target="_blank" rel="noreferrer">GITHUB</a></li>
+            <li><a href="https://www.fiverr.com/alexrzmz" class="Footer-fiverr" title="Perfil de Fiverr de Alejandro Rodríguez" target="_blank" rel="noreferrer">FIVERR</a></li>
+        </ul>
+    </footer>
+
+</body>

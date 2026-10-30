@@ -1,0 +1,584 @@
+/* Reset CSS / Normalizar CSS */
+:root{
+       scroll-behavior: smooth;
+        font-size:100%;
+        background-color: var(--color-white);
+
+        --color-black: #1E1E1E;
+        --color-white: #EEEDF6;
+        --color-primary: #5CF87D;
+        --color-grey: #454545;
+        --chip-border-radius: 999px;
+        --chip-padding: 8px 24px;
+        --chip-border: 1px solid var(--color-black);
+        --chip-text-size: 16px;
+        --web-padding: 0 64px;
+        --header-height: 80px;
+        --subheader-height: 3.5rem;
+}
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    display: block;
+    color:inherit;
+    text-decoration: none;
+}
+p a{
+    display: inline;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong , em , mark, pre, code{
+    font:inherit;
+}
+mark{
+    background-color:transparent;
+}
+picture , img, video , iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+svg{
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form , input , select , option , textarea , label , fieldset , legend , button{
+    display: block;
+    font:inherit;
+    background-color: initial;
+}
+fieldset {
+    border : none ;
+}
+button , label{
+    cursor: pointer;
+}
+
+/* ------------------ Header Style ------------------ */
+
+.Header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    /* min-height: 5rem; */
+    border-bottom: .0625rem solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 0 4rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 2;
+
+    background: rgba(238, 237, 246, 0.578);
+    backdrop-filter: blur(1.625rem);
+    -webkit-backdrop-filter: blur(1.625rem);
+
+}
+
+.Header-logo {
+    width: fit-content;
+    min-height: 80px;
+    /* background-color:blue; */
+
+    display: flex;
+    align-items: center;    
+}
+
+.Header-img {
+    width: 175px;
+    height: auto;
+}
+.Header-nav {
+    width:fit-content;
+    /* background-color:green; */
+    align-items: center;
+    display: flex;
+}
+.Header-ul {
+    width:fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+
+    gap: 45px;
+
+}
+.Header-li--Home {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+
+}
+.Header-li--Proyectos {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Sobremi {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Contacto {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+/* Botón del menú: oculto en escritorio */
+.Header-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-black);
+    cursor: pointer;
+}
+/* Iconos del botón: por defecto se ve el de abrir */
+.Header-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.Header-icon--close {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    /* En móvil se muestra el botón */
+    .Header-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Menú cerrado: altura 0 y contenido oculto */
+    .Header-nav {
+        width: 100%;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-black);
+        transition: max-height .3s ease;
+    }
+    .Header-ul {
+        width: 100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem 64px;
+    }
+    /* Menú abierto (clase que añade el JS) */
+    .Header-nav.is-open {
+        max-height: 20rem;
+    }
+    /* Botón con el menú abierto: se cambia el icono */
+    .Header-button.is-open .Header-icon--open {
+        display: none;
+    }
+    .Header-button.is-open .Header-icon--close {
+        display: block;
+    }
+}
+
+/* ------------------ Subheader Style ------------------ */
+
+.Subheader {
+    width: 100%;
+    /* min-height: 5rem; */
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Outfit', sans-serif;
+
+    height: var(--subheader-height);
+    padding: 0 4rem;
+    margin-bottom: var(--header-height);
+    border-bottom: .0313rem solid var(--color-black);
+
+
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    top: var(--header-height);
+    z-index: 0;
+    
+}
+.Subheader-h1 {
+}
+.Subheader-Location {
+    width: fit-content;
+    min-height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    
+}
+.Location-img{
+    width: 1.25rem;
+    height: auto;
+    color: var(--color-primary);
+}
+
+.Location-h2 {
+}
+/* ------------------ Content Style ------------------ */
+
+.Content {
+    width: 100%;
+    height: calc(100vh - var(--header-height) - var(--subheader-height));
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ------------------ Info Style ------------------ */
+
+.Info {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: clamp(2rem, 7vh, 6rem) 64px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vh, 3.5rem);
+}
+.Info-intro {
+    max-width: 588px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: clamp(1.5rem, 4vh, 3rem);
+}
+.Info-chip {
+    padding: var(--chip-padding);
+    border: var(--chip-border);
+    border-radius: var(--chip-border-radius);
+    font-size: 16px;
+    font-weight: 700;
+}
+.Info-h2 {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    font-size: clamp(2.5rem, 6vh, 4rem);
+    font-weight: 700;
+    white-space: nowrap;
+}
+.Info-square {
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary);
+}
+.Info-p {
+    max-width: 512px;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.Info-data,
+.Info-rrss {
+    padding-top: 32px;
+    border-top: .03125rem solid var(--color-grey);
+}
+.Info-data {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: clamp(1rem, 2.5vh, 2rem);
+}
+.Info-item {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 10px;
+}
+.Info-label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-grey);
+}
+.Info-link,
+.Info-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.Info-link {
+    text-decoration: underline;
+}
+.Info-value--location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.Info-pin {
+    width: 13px;
+    height: 17px;
+}
+.Info-rrss {
+    padding-top: 24px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+}
+.Info-rrss-item {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    line-height: 1.3;
+}
+.Info-rrss-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.Info-rrss-url {
+    font-size: .875rem;
+    color: var(--color-grey);
+}
+
+/* ------------------ Form Style ------------------ */
+
+.Form {
+    --form-text: #B3B2B9;
+    --form-text-hover: #8F8E94;
+
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: clamp(2rem, 6vh, 5rem) 64px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: clamp(1.5rem, 4vh, 3rem);
+}
+.Form-title {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+.Form-h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.Form-p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--form-text-hover);
+}
+.Form-form {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: clamp(1.25rem, 3.5vh, 3rem);
+}
+.Form-row {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 80px;
+}
+.Form-row > .Form-field {
+    flex: 1 0 0;
+    min-width: 0;
+}
+.Form-field {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+.Form-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--form-text);
+}
+.Form-input,
+.Form-select,
+.Form-textarea {
+    width: 100%;
+    padding: 16px 8px;
+    border-bottom: 1px solid var(--form-text);
+    color: var(--color-white);
+    font-weight: 300;
+    font-size: 1.25rem;
+    outline: none;
+}
+.Form-input {
+    height: 47px;
+}
+.Form-input::placeholder,
+.Form-textarea::placeholder {
+    color: var(--form-text);
+}
+.Form-select {
+    height: 47px;
+    padding-block: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--form-text);
+
+    appearance: none;
+    -webkit-appearance: none;
+    background: url("../img/chevron-down.svg") no-repeat right 8px center;
+    cursor: pointer;
+}
+.Form-select:valid {
+    color: var(--color-primary);
+}
+.Form-select option {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.Form-field--message {
+    flex: 1 0 auto;
+}
+.Form-textarea {
+    flex: 1 0 auto;
+    min-height: 6rem;
+    resize: none;
+}
+.Form-input:focus-visible,
+.Form-select:focus-visible,
+.Form-textarea:focus-visible {
+    border-bottom-color: var(--color-primary);
+}
+.Form-footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 48px;
+}
+.Form-legal {
+    max-width: 24rem;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--form-text);
+}
+.Form-submit {
+    flex-shrink: 0;
+    height: fit-content;
+    padding: 16px 32px;
+    border-radius: 100px;
+    background-color: var(--color-grey);
+    color: var(--form-text-hover);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.Form-submit-icon {
+    width: 12px;
+    height: 12px;
+}
+
+@media (max-width: 1164px) {
+    .Content {
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .Info-h2 {
+        font-size: 3rem;
+        white-space: normal;
+    }
+}
+@media (max-width: 650px) {
+    .Info,
+    .Form {
+        padding: 64px 24px;
+    }
+    .Form-row,
+    .Form-footer {
+        flex-flow: column nowrap;
+        gap: 48px;
+    }
+    .Info-rrss {
+        justify-content: space-between;
+    }
+}
+
+/* ---------------Footer section Style ------------------ */
+
+.Footer {
+    /* Ocupa todas las columnas de la rejilla de .Content */
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 204px;
+    background-color: var(--color-white);
+    padding: 48px 64px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer-img {
+    width: 10.9375rem;
+    height: auto;
+}
+.Footer-p {
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Footer-ul {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+.Footer-linkedin {
+}
+.Footer-behance {
+}
+.Footer-github {
+}
+.Footer-fiverr {
+}
+/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
+@media (max-width: 768px) {
+    .Footer {
+        padding: 3rem 1.5rem;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .Footer-ul {
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+}
+/* ------------------ Picture ------------------ */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+picture {
+    display: contents;
+}

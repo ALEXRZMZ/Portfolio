@@ -1,0 +1,1339 @@
+/* Reset CSS / Normalizar CSS */
+:root{
+       scroll-behavior: smooth;
+        font-size:100%;
+        background-color: var(--color-white);
+
+        --color-black: #1E1E1E;
+        --color-white: #EEEDF6;
+        --color-primary: #5CF87D;
+        --color-grey: #454545;
+        --chip-border-radius: 999px;
+        --chip-padding: 8px 24px;
+        --chip-border: 1px solid var(--color-black);
+        --chip-text-size: 16px;
+        --web-padding: 0 64px;
+}
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    display: block;
+    color:inherit;
+    text-decoration: none;
+}
+p a{
+    display: inline;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong , em , mark, pre, code{
+    font:inherit;
+}
+mark{
+    background-color:transparent;
+}
+picture , img, video , iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+svg{
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form , input , select , option , textarea , label , fieldset , legend , button{
+    display: block;
+    font:inherit;
+    background-color: initial;
+}
+fieldset {
+    border : none ;
+}
+button , label{
+    cursor: pointer;
+}
+
+/* ------------------ Header Style ------------------ */
+
+.Header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    /* min-height: 5rem; */
+    border-bottom: .0625rem solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 0 4rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 2;
+
+    background: rgba(238, 237, 246, 0.578);
+    backdrop-filter: blur(1.625rem);
+    -webkit-backdrop-filter: blur(1.625rem);
+
+}
+
+.Header-logo {
+    width: fit-content;
+    min-height: 80px;
+    /* background-color:blue; */
+
+    display: flex;
+    align-items: center;    
+}
+
+.Header-img {
+    width: 175px;
+    height: auto;
+}
+.Header-nav {
+    width:fit-content;
+    /* background-color:green; */
+    align-items: center;
+    display: flex;
+}
+.Header-ul {
+    width:fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+
+    gap: 45px;
+
+}
+.Header-li--Home {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+
+}
+.Header-li--Proyectos {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Sobremi {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Contacto {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+/* Botón del menú: oculto en escritorio */
+.Header-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-black);
+    cursor: pointer;
+}
+/* Iconos del botón: por defecto se ve el de abrir */
+.Header-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.Header-icon--close {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    /* En móvil se muestra el botón */
+    .Header-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Menú cerrado: altura 0 y contenido oculto */
+    .Header-nav {
+        width: 100%;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-black);
+        transition: max-height .3s ease;
+    }
+    .Header-ul {
+        width: 100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem 64px;
+    }
+    /* Menú abierto (clase que añade el JS) */
+    .Header-nav.is-open {
+        max-height: 20rem;
+    }
+    /* Botón con el menú abierto: se cambia el icono */
+    .Header-button.is-open .Header-icon--open {
+        display: none;
+    }
+    .Header-button.is-open .Header-icon--close {
+        display: block;
+    }
+}
+
+/* ------------------ Subheader Style ------------------ */
+
+.Subheader {
+    width: 100%;
+    /* min-height: 5rem; */
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Outfit', sans-serif;
+
+    padding: 16px 4rem;
+    margin-bottom: 5rem;
+    border-bottom: .0313rem solid var(--color-black);
+
+
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    top: 80px;
+    z-index: 0;
+    
+}
+.Subheader-h1 {
+}
+.Subheader-Location {
+    width: fit-content;
+    min-height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    
+}
+.Location-img{
+    width: 1.25rem;
+    height: auto;
+    color: var(--color-primary);
+}
+
+.Location-h2 {
+}
+
+/* ------------------ Project Hero Style ------------------ */
+
+.ProjectHero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 40px 4rem;
+    margin-top: calc(80px - 5rem);
+    background-color: var(--color-black);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.ProjectHero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ProjectHero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(30, 30, 30, 0.6);
+}
+.ProjectHero-chips,
+.ProjectHero-info {
+    position: relative;
+}
+.ProjectHero-chips {
+    display: flex;
+    gap: 39px;
+    align-items: center;
+}
+.Chip {
+    padding: var(--chip-padding);
+    border-radius: 50px;
+    font-size: var(--chip-text-size);
+    font-weight: 700;
+}
+.Chip--primary {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-black);
+}
+.Chip--dark {
+    background-color: rgba(30, 30, 30, 0.65);
+    border: 1px solid #828282;
+    color: var(--color-white);
+    backdrop-filter: blur(1.25px);
+    -webkit-backdrop-filter: blur(1.25px);
+}
+.ProjectHero-info {
+    max-width: 1091px;
+    min-height: 141px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 24px;
+}
+.ProjectHero-title {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -1.08px;
+    line-height: normal;
+}
+.ProjectHero-tags {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* ------------------ Summary Style ------------------ */
+
+.Summary {
+    padding: 85px 4rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Outfit', sans-serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+}
+.Summary-header {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+}
+.Summary-number {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 56px;
+    line-height: 1;
+    color: #D6D5DD;
+}
+.Summary-title {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.Summary-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+}
+.Summary-h3 {
+    font-size: 12px;
+    font-weight: 600;
+}
+.Summary-body {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+.Summary-list {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 34px;
+}
+.Summary-item {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    padding-bottom: 25px;
+    font-weight: 600;
+    background: url("../img/line-divider.svg") no-repeat left bottom / 100% 1px;
+}
+.Summary-item--last {
+    background: none;
+}
+.Summary-label {
+    font-size: 11px;
+    color: #8F8E94;
+}
+.Summary-value {
+    font-size: 18px;
+    color: var(--color-black);
+}
+.Summary-content {
+    /* Responsive (hecho con IA, Claude): se puede encoger y no fuerza el ancho */
+    flex: 0 1 990px;
+    min-width: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 62px;
+}
+.Summary-lead {
+    font-size: 40px;
+    font-weight: 600;
+    color: #8F8E94;
+}
+.Summary-strong {
+    color: var(--color-black);
+}
+.Summary-highlight {
+    position: relative;
+    z-index: 0;
+}
+/* Trazo detrás del texto, con su borde inferior apoyado en la línea base */
+.Summary-highlight::after {
+    content: "";
+    position: absolute;
+    top: 0.8em;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 0.2em;
+    background-color: var(--color-primary);
+}
+.Summary-Text {
+    display: flex;
+    gap: 80px;
+    font-size: 19px;
+    font-weight: 300;
+    color: #6B6B6F;
+}
+.Text-p {
+    flex: 1 0 0;
+    min-width: 0;
+}
+
+
+/* ------------------ Challenge Style ------------------ */
+
+.Challenge {
+    padding: 96px 4rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: 'Outfit', sans-serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4rem;
+}
+.Challenge-header {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+}
+.Challenge-number {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 56px;
+    line-height: 56px;
+    color: #6B6B6F;
+}
+.Challenge-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 4px;
+}
+.Challenge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+}
+.Challenge-h3 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #6B6B6F;
+}
+.Challenge-body {
+    display: flex;
+    gap: 222px;
+    align-items: stretch;
+}
+.Challenge-intro {
+    width: 588px;
+    flex-shrink: 0;
+}
+.Challenge-heading {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 62.56px;
+    letter-spacing: -2px;
+    color: var(--color-grey);
+}
+.Challenge-headingDot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+}
+.Challenge-text {
+    padding-top: 28px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 28.05px;
+    color: rgba(238, 237, 246, 0.45);
+}
+.Challenge-cards {
+    width: 790px;
+    max-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 20px;
+}
+.Challenge-card {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    padding-bottom: 2px;
+    border-bottom: 1px dashed rgba(238, 237, 246, 0.12);
+}
+.Challenge-cardTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.Challenge-cardText {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 36.3px;
+    color: #6B6B6F;
+}
+.Challenge-process {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 24px;
+    padding-top: 8px;
+}
+.Challenge-processLabel {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(238, 237, 246, 0.35);
+}
+.Challenge-steps {
+    display: flex;
+    border-top: 1px solid rgba(238, 237, 246, 0.1);
+}
+.Challenge-step {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 12px;
+    padding: 24px 16px 4px 0;
+    position: relative;
+}
+.Challenge-step + .Challenge-step {
+    padding-left: 16px;
+}
+.Challenge-step::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(238, 237, 246, 0.1);
+}
+.Challenge-step:last-child::after {
+    content: none;
+}
+.Challenge-stepNumber {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--color-primary);
+}
+.Challenge-stepName {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--color-grey);
+}
+.Challenge-divider {
+    height: 28px;
+    border-bottom: 1px dashed rgba(238, 237, 246, 0.12);
+}
+
+@media (max-width: 1280px) {
+    .Challenge-body {
+        gap: 64px;
+    }
+    .Challenge-intro {
+        width: auto;
+        flex: 1 0 0;
+    }
+    .Challenge-cards {
+        flex: 1 0 0;
+    }
+}
+@media (max-width: 768px) {
+    .Challenge {
+        padding: 64px 1.5rem;
+    }
+    .Challenge-body {
+        flex-flow: column nowrap;
+        gap: 40px;
+    }
+    .Challenge-heading {
+        font-size: 44px;
+        line-height: 1.05;
+    }
+    .Challenge-cardText {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .Challenge-steps {
+        flex-flow: row wrap;
+    }
+    .Challenge-step {
+        flex: 1 0 33%;
+    }
+}
+
+/* ------------------ Documentation Style ------------------ */
+
+.Documentation {
+    padding: 96px 4rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: 'Outfit', sans-serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4rem;
+}
+.Documentation-header {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+}
+.Documentation-number {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 56px;
+    line-height: 56px;
+    color: #6B6B6F;
+}
+.Documentation-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 4px;
+}
+.Documentation-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+}
+.Documentation-h3 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #6B6B6F;
+}
+.Documentation-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 64px;
+}
+.Documentation-gallery {
+    width: 588px;
+    flex-shrink: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 28px;
+}
+.Documentation-label {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--color-grey);
+}
+.Documentation-grid {
+    display: flex;
+    gap: 28px;
+}
+.Documentation-stack {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 28px;
+}
+.Documentation-media {
+    background-color: #252525;
+    border-radius: 16px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px;
+}
+.Documentation-media--tall {
+    flex: 1 0 0;
+    min-width: 0;
+}
+.Documentation-media--small {
+    height: 220px;
+}
+.Documentation-media--wide {
+    height: 300px;
+}
+.Documentation-icon {
+    border: 2px dashed rgba(92, 248, 125, 0.12);
+    border-radius: 16px;
+}
+.Documentation-icon img {
+    width: 22px;
+    height: 22px;
+}
+.Documentation-caption {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-primary);
+}
+.Documentation-content {
+    width: 788px;
+    max-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+}
+.Documentation-intro {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+.Documentation-heading {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    color: var(--color-white);
+}
+.Documentation-list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+}
+.Documentation-item {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+.Documentation-itemTitle {
+    width: 331px;
+    max-width: 100%;
+    padding-bottom: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-white);
+    background: url("../img/line-divider-dark.svg") no-repeat left bottom / 100% 1px;
+}
+.Documentation-itemText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+@media (max-width: 1280px) {
+    .Documentation-gallery {
+        width: auto;
+        flex: 1 0 0;
+    }
+    .Documentation-content {
+        flex: 1 0 0;
+    }
+}
+@media (max-width: 768px) {
+    .Documentation {
+        padding: 64px 1.5rem;
+    }
+    .Documentation-body {
+        flex-flow: column nowrap;
+        gap: 56px;
+    }
+    .Documentation-gallery {
+        width: 100%;
+    }
+    .Documentation-media--tall {
+        min-height: 300px;
+    }
+    .Documentation-grid {
+        flex-flow: column nowrap;
+    }
+    .Documentation-heading {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+}
+/* ------------------ Solution Style ------------------ */
+
+.Solution {
+    padding: 96px 4rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: 'Outfit', sans-serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4rem;
+}
+.Solution-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+}
+.Solution-index {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+.Solution-number {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 56px;
+    line-height: 56px;
+    color: #6B6B6F;
+}
+.Solution-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 4px;
+}
+.Solution-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+}
+.Solution-h3 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #6B6B6F;
+}
+.Solution-heading {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 57.6px;
+    letter-spacing: -2px;
+    text-align: right;
+    color: #fff;
+}
+.Solution-headingDot {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-left: 8px;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+}
+.Solution-body {
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
+}
+.Solution-decisions {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+}
+.Solution-label {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+.Solution-list {
+    background: url("../img/line-divider-muted.svg") no-repeat left bottom / 100% 1px;
+}
+.Solution-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    background: url("../img/line-divider-muted.svg") no-repeat left top / 100% 1px;
+}
+.Solution-itemNumber {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+    color: var(--color-white);
+}
+.Solution-itemText {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 25.5px;
+    color: var(--color-white);
+}
+.Solution-media {
+    flex: 1 0 0;
+    min-width: 0;
+    height: 26rem;
+    padding: 1rem;
+    background-color: #252525;
+    border-radius: 16px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.Solution-media--main {
+    height: 30rem;
+    background-color: var(--color-white);
+}
+.Solution-icon {
+    width: 56px;
+    height: 56px;
+    border: 2px dashed rgba(238, 237, 246, 0.12);
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Solution-icon img {
+    width: 22px;
+    height: 22px;
+}
+.Solution-caption {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(238, 237, 246, 0.6);
+}
+.Solution-gallery {
+    display: flex;
+    gap: 20px;
+}
+
+/* ------------------ Next Project Style ------------------ */
+
+.NextProject {
+    padding: 4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+    background: url("../img/line-divider-dark.svg") no-repeat left 4rem top 4rem / calc(100% - 8rem) 1px;
+}
+.NextProject-top {
+    padding-top: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.NextProject-label,
+.NextProject-all {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #6B6B6F;
+}
+.NextProject-all {
+    transition: color .3s ease;
+}
+.NextProject-all:hover {
+    color: var(--color-white);
+}
+.NextProject-card {
+    position: relative;
+    height: 280px;
+    padding: 20px 24px 24px 20px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.NextProject-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0));
+}
+.NextProject-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+.NextProject-card:hover .NextProject-img {
+    transform: scale(1.04);
+}
+.NextProject-chips,
+.NextProject-info {
+    position: relative;
+    z-index: 2;
+}
+.NextProject-chips {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.NextProject-chip {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    line-height: 16.5px;
+}
+.NextProject-chip--primary {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.NextProject-chip--dark {
+    background-color: rgba(69, 69, 69, 0.75);
+    color: var(--color-white);
+    font-weight: 500;
+}
+.NextProject-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+.NextProject-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 27.5px;
+    color: var(--color-white);
+}
+.NextProject-arrow {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.NextProject-arrow img {
+    width: 9.26562px;
+    height: 9.27344px;
+}
+
+@media (max-width: 768px) {
+    .Solution {
+        padding: 64px 1.5rem;
+    }
+    .Solution-header {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+    .Solution-heading {
+        font-size: 44px;
+        line-height: 1.05;
+        text-align: left;
+    }
+    .Solution-body,
+    .Solution-gallery {
+        flex-flow: column nowrap;
+    }
+    .Solution-media,
+    .Solution-media--main {
+        flex: none;
+        width: 100%;
+    }
+    .Solution-media {
+        height: 22rem;
+    }
+    .Solution-media--main {
+        height: 320px;
+    }
+    .NextProject {
+        padding: 2rem 0 0;
+        background-position: left top;
+        background-size: 100% 1px;
+    }
+    .NextProject-top {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* ---------------Footer section Style ------------------ */
+
+.Footer {
+    width: 100%;
+    min-height: 204px;
+    background-color: var(--color-white);
+    padding: 48px 64px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer-img {
+    width: 10.9375rem;
+    height: auto;
+}
+.Footer-p {
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Footer-ul {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+.Footer-linkedin {
+}
+.Footer-behance {
+}
+.Footer-github {
+}
+.Footer-fiverr {
+}
+/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
+@media (max-width: 768px) {
+    .Footer {
+        padding: 3rem 1.5rem;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .Footer-ul {
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+}
+
+/* ------------------ Picture ------------------ */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+picture {
+    display: contents;
+}
+
+/* ------------------ Imágenes de la sección solución ------------------ */
+/* La imagen ocupa el espacio libre de la tarjeta sin deformarse */
+.Solution-img {
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    margin-top: 1rem;
+    object-fit: contain;
+}
+
+/* Capturas planas de pantalla: llenan el hueco con esquinas redondeadas */
+.Solution-img--captura {
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0.75rem;
+}
+
+/* ------------------ Documentación: imágenes y paleta ------------------ */
+/* Variante clara de la tarjeta para logotipos oscuros */
+.Documentation-media--light {
+    background-color: var(--color-white);
+}
+.Documentation-media--light .Documentation-caption {
+    color: rgba(30, 30, 30, 0.6);
+}
+/* Imagen (SVG) dentro de la tarjeta: se ajusta sin deformarse */
+.Documentation-img {
+    width: 80%;
+    max-height: 60%;
+    object-fit: contain;
+}
+/* Paleta de color hecha en código */
+.Palette {
+    --palette-corporativo: #276E77;
+    --palette-negro: #202020;
+    --palette-blanco: #ECEBF0;
+
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+}
+.Palette-color {
+    flex: 1 1 0;
+    height: 6rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+
+    display: flex;
+    align-items: flex-end;
+}
+.Palette-color--corporativo {
+    background-color: var(--palette-corporativo);
+    color: var(--palette-blanco);
+}
+.Palette-color--negro {
+    background-color: var(--palette-negro);
+    color: var(--palette-blanco);
+}
+.Palette-color--blanco {
+    background-color: var(--palette-blanco);
+    color: var(--palette-negro);
+    border: 0.0625rem solid rgba(30, 30, 30, 0.15);
+}
+.Palette-hex {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* Capturas de pantalla dentro de la documentación: llenan la tarjeta */
+.Documentation-img--captura {
+    width: 100%;
+    max-height: none;
+    flex: 1 1 0;
+    min-height: 0;
+    margin-top: 1rem;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0.75rem;
+}
+/* Muestra tipográfica hecha en código */
+.Specimen {
+    width: 100%;
+    padding: 1rem;
+    color: var(--color-black);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.25rem;
+}
+.Specimen-name {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.Specimen-sample {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+.Specimen-sample--display {
+    font-family: 'Climate Crisis', sans-serif;
+}
+/* Paleta de la propia web */
+.Palette-color--webnegro {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.Palette-color--webblanco {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 0.0625rem solid rgba(30, 30, 30, 0.15);
+}
+.Palette-color--webverde {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+}
+.Palette-color--webgris {
+    background-color: var(--color-grey);
+    color: var(--color-white);
+}
+
+/* ------------------ Resumen responsive (hecho con IA, Claude) ------------------ */
+/* Por debajo de 1280px la lista de datos y el texto se apilan */
+@media (max-width: 1280px) {
+    .Summary-body {
+        flex-flow: column nowrap;
+        gap: 2.5rem;
+    }
+    .Summary-content {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
+/* En móvil el titular del resumen es más pequeño */
+@media (max-width: 768px) {
+    .Summary-lead {
+        font-size: 1.75rem;
+    }
+}
+
+/* ------------------ Portada de proyecto responsive (hecho con IA, Claude) ------------------ */
+/* En móvil el título de la portada se reduce para que no se corte */
+@media (max-width: 768px) {
+    .ProjectHero-title {
+        font-size: 2rem;
+        overflow-wrap: break-word;
+    }
+}

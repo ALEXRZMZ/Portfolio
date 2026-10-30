@@ -1,0 +1,788 @@
+/* Reset CSS / Normalizar CSS */
+:root{
+       scroll-behavior: smooth;
+        font-size:100%;
+        background-color: var(--color-white);
+
+        --color-black: #1E1E1E;
+        --color-white: #EEEDF6;
+        --color-primary: #5CF87D;
+        --color-grey: #454545;
+        --chip-border-radius: 999px;
+        --chip-padding: 8px 24px;
+        --chip-border: 1px solid var(--color-black);
+        --chip-text-size: 16px;
+        --web-padding: 0 64px;
+}
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    display: block;
+    color:inherit;
+    text-decoration: none;
+}
+p a{
+    display: inline;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong , em , mark, pre, code{
+    font:inherit;
+}
+mark{
+    background-color:transparent;
+}
+picture , img, video , iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+svg{
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form , input , select , option , textarea , label , fieldset , legend , button{
+    display: block;
+    font:inherit;
+    background-color: initial;
+}
+fieldset {
+    border : none ;
+}
+button , label{
+    cursor: pointer;
+}
+
+/* ------------------ Header Style ------------------ */
+
+.Header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    /* min-height: 5rem; */
+    border-bottom: .0625rem solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 0 4rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 2;
+
+    background: rgba(238, 237, 246, 0.578);
+    backdrop-filter: blur(1.625rem);
+    -webkit-backdrop-filter: blur(1.625rem);
+
+}
+
+.Header-logo {
+    width: fit-content;
+    min-height: 80px;
+    /* background-color:blue; */
+
+    display: flex;
+    align-items: center;    
+}
+
+.Header-img {
+    width: 175px;
+    height: auto;
+}
+.Header-nav {
+    width:fit-content;
+    /* background-color:green; */
+    align-items: center;
+    display: flex;
+}
+.Header-ul {
+    width:fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+
+    gap: 45px;
+
+}
+.Header-li--Home {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+
+}
+.Header-li--Proyectos {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Sobremi {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Contacto {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+/* Botón del menú: oculto en escritorio */
+.Header-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-black);
+    cursor: pointer;
+}
+/* Iconos del botón: por defecto se ve el de abrir */
+.Header-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.Header-icon--close {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    /* En móvil se muestra el botón */
+    .Header-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Menú cerrado: altura 0 y contenido oculto */
+    .Header-nav {
+        width: 100%;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-black);
+        transition: max-height .3s ease;
+    }
+    .Header-ul {
+        width: 100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem 64px;
+    }
+    /* Menú abierto (clase que añade el JS) */
+    .Header-nav.is-open {
+        max-height: 20rem;
+    }
+    /* Botón con el menú abierto: se cambia el icono */
+    .Header-button.is-open .Header-icon--open {
+        display: none;
+    }
+    .Header-button.is-open .Header-icon--close {
+        display: block;
+    }
+}
+
+/* ------------------ Subheader Style ------------------ */
+
+.Subheader {
+    width: 100%;
+    /* min-height: 5rem; */
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Outfit', sans-serif;
+
+    padding: 16px 4rem;
+    margin-bottom: 5rem;
+    border-bottom: .0313rem solid var(--color-black);
+
+
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    top: 80px;
+    z-index: 0;
+    
+}
+.Subheader-h1 {
+}
+.Subheader-Location {
+    width: fit-content;
+    min-height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    
+}
+.Location-img{
+    width: 1.25rem;
+    height: auto;
+    color: var(--color-primary);
+}
+
+.Location-h2 {
+}
+
+/* ------------------ Hero Style ------------------ */
+
+
+.Hero {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white);
+    padding: var(--web-padding);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Hero-content {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 72px;
+}
+.Hero-tag {
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    border: var(--chip-border);
+    border-radius: var(--chip-border-radius);
+    padding: var(--chip-padding);
+}
+.Hero-info {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.5rem;
+}
+.Hero-title{
+    font-size: 5rem;
+    
+}
+.Hero-span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+}
+.Hero-h1 {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 5rem;
+    font-weight: 400;
+}
+.Hero-square {
+    width: 0.35em;
+    height: 0.35em;
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-primary);
+}
+.Hero-text {
+    /* Responsive (hecho con IA, Claude): ancho máximo en vez de fijo para que no se salga en móvil */
+    width: 100%;
+    max-width: 74.6875rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 300;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.5rem;
+}
+.Hero-p {
+}
+.Hero-p--first {
+}
+.Hero-p--second {
+}
+.Hero-buttons {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.25rem;
+
+    justify-content: start;
+    align-items: center;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.Hero-contact {
+    width: fit-content;
+    height: fit-content;
+    padding: var(--chip-padding);
+    background-color: var(--color-primary);
+    border-radius: var(--chip-border-radius);
+}
+.Hero-Button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: var(--chip-padding);
+    border-radius: var(--chip-border-radius);
+    background-color: var(--color-white);
+    border: var(--chip-border);
+}
+.Button-span {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+.Button-icon {
+}
+
+/* ------------------ Work section Style ------------------ */
+
+.Work {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--color-black);
+    padding: 0 4rem 5.5rem;
+}
+.Work-container {
+    width: 100%;
+    padding-top: 5rem;
+    border-top: .0625rem solid var(--color-grey);
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+.Work-h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.Work-cards {
+    width: 100%;
+    border: .0625rem solid var(--color-grey);
+    border-radius: 1rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+.Work-card {
+    flex: 1 0 0;
+    min-width: 0;
+    padding: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+.Work-card + .Work-card {
+    border-left: .0625rem solid var(--color-grey);
+}
+.Work-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+.Work-info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    color: var(--color-white);
+    font-family: 'Outfit', sans-serif;
+}
+.Work-h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.Work-p {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.Work-chips {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12px;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.Work-chip {
+    padding: var(--chip-padding);
+    border: 1px solid var(--color-white);
+    border-radius: var(--chip-border-radius);
+    color: var(--color-white);
+    white-space: nowrap;
+}
+
+@media (max-width: 1244px) {
+    .Work-cards {
+        flex-flow: column nowrap;
+    }
+    .Work-card + .Work-card {
+        border-left: none;
+        border-top: .0625rem solid var(--color-grey);
+    }
+}
+
+/* ------------------ Method section Style ------------------ */
+
+.Method {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--color-black);
+    padding: 0 64px 88px;
+}
+.Method-container {
+    width: 100%;
+    padding-top: 80px;
+    border-top: .0625rem solid var(--color-grey);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.Method-h2 {
+    flex: 0 0 385px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.Method-list {
+    flex: 1 0 0;
+    min-width: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+}
+.Method-item {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 32px;
+}
+.Method-item + .Method-item {
+    padding-top: 32px;
+    border-top: .0625rem solid var(--color-grey);
+}
+.Method-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+.Method-info {
+    flex: 1 0 0;
+    min-width: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    font-family: 'Outfit', sans-serif;
+}
+.Method-h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-white);
+}
+.Method-p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-grey);
+}
+
+@media (max-width: 1100px) {
+    .Method-container {
+        flex-flow: column nowrap;
+        gap: 40px;
+    }
+    .Method-h2 {
+        flex: none;
+    }
+}
+
+/* ---------------- Marquee Style ------------------ */
+
+
+.Marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-black);
+}
+.Marquee-container {
+    width: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    animation: marquee-scroll 20s linear infinite;
+}
+.Marquee-content {
+    width: max-content;
+    height: 175px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex: 0 0 auto;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 139px;
+    color: var(--color-white);
+}
+.Marquee-content > * {
+    flex: 0 0 auto;
+}
+.Marquee-content svg {
+    width: 75px;
+    height: 68px;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Marquee-container {
+        animation-play-state: paused;
+    }
+}
+
+
+/* --------------- Contact section Style ------------------ */
+
+
+.Contact {
+    width: 100%;
+    height: fit-content;
+    padding: 0 64px 5rem;
+    background-color: var(--color-black);
+
+    
+    display: flex;
+    flex-flow: column nowrap;
+}
+.Contact-h2 {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 48px;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--color-white);
+}
+
+.Contact-h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: .5008px;
+    background-color: var(--color-white);
+    margin-top: 48px;
+}
+
+.Contact-info {
+    width: 100%;
+    height: fit-content;
+
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 320px;
+}
+.Contact-p {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--color-white);
+}
+.Contact-data {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap:32px;
+}
+.Contact-email {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: underline;
+    color: var(--color-white);
+}
+.Contact-Button {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-primary);
+    padding: var(--chip-padding);
+    border-radius: var(--chip-border-radius);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: centre;
+}
+.Button-span {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1.625rem;
+    color: var(--color-black);
+}
+.Button-icon {
+}
+.Contact-rrss {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--color-white);
+}
+.Contact-linkedin {
+}
+.Contact-behance {
+}
+.Contact-github {
+}
+.Contact-fiverr {
+}
+/* Contacto en móvil: una sola columna y redes que pueden saltar de línea */
+@media (max-width: 850px) {
+    .Contact {
+        padding: 0 1.5rem 5rem;
+    }
+    .Contact-info {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+    .Contact-rrss {
+        flex-flow: row wrap;
+    }
+}
+
+/* ---------------Footer section Style ------------------ */
+
+.Footer {
+    width: 100%;
+    min-height: 204px;
+    background-color: var(--color-white);
+    padding: 48px 64px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer-img {
+    width: 10.9375rem;
+    height: auto;
+}
+.Footer-p {
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Footer-ul {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+.Footer-linkedin {
+}
+.Footer-behance {
+}
+.Footer-github {
+}
+.Footer-fiverr {
+}
+/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
+@media (max-width: 768px) {
+    .Footer {
+        padding: 3rem 1.5rem;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .Footer-ul {
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+}
+
+/* ------------------ Picture ------------------ */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+picture {
+    display: contents;
+}
+
+/* ------------------ Hero responsive (hecho con IA, Claude) ------------------ */
+/* En móvil el titular del hero se reduce para que el nombre quepa en pantalla */
+@media (max-width: 768px) {
+    .Hero {
+        height: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .Hero-h1 {
+        font-size: 1.75rem;
+        overflow-wrap: break-word;
+    }
+}

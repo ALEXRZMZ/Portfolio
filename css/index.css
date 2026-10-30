@@ -1,0 +1,889 @@
+/* Reset CSS / Normalizar CSS */
+:root{
+       scroll-behavior: smooth;
+        font-size:100%;
+        background-color: var(--color-white);
+
+        --color-black: #1E1E1E;
+        --color-white: #EEEDF6;
+        --color-primary: #5CF87D;
+        --color-grey: #454545;
+        --header-height: 5rem;
+        --subheader-height: 3.375rem;
+        --chip-border-radius: 62.4375rem;
+        --chip-padding: .5rem 1.5rem;
+        --chip-border: .0625rem solid var(--color-black);
+        --chip-text-size: 1rem
+}
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    display: block;
+    color:inherit;
+    text-decoration: none;
+}
+p a{
+    display: inline;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong , em , mark, pre, code{
+    font:inherit;
+}
+mark{
+    background-color:transparent;
+}
+picture , img, video , iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+svg{
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form , input , select , option , textarea , label , fieldset , legend , button{
+    display: block;
+    font:inherit;
+    background-color: initial;
+}
+fieldset {
+    border : none ;
+}
+button , label{
+    cursor: pointer;
+}
+
+/* ------------------ Header Style ------------------ */
+
+.Header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    /* min-height: 80px; */
+    border-bottom: 1px solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 0 64px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 2;
+
+    background: rgba(238, 237, 246, 0.578);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+
+}
+
+.Header-logo {
+    width: fit-content;
+    min-height: var(--header-height);
+    /* background-color:blue; */
+
+    display: flex;
+    align-items: center;    
+}
+
+.Header-img {
+    width: 10.9375rem;
+    height: auto;
+}
+.Header-nav {
+    width:fit-content;
+    /* background-color:green; */
+    align-items: center;
+    display: flex;
+}
+.Header-ul {
+    width:fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+
+    gap: 2.8125rem;
+
+}
+.Header-li--Home {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+
+}
+.Header-li--Proyectos {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Sobremi {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Contacto {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+/* Botón del menú: oculto en escritorio */
+.Header-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-black);
+    cursor: pointer;
+}
+/* Iconos del botón: por defecto se ve el de abrir */
+.Header-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.Header-icon--close {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    /* En móvil se muestra el botón */
+    .Header-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Menú cerrado: altura 0 y contenido oculto */
+    .Header-nav {
+        width: 100%;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-black);
+        transition: max-height .3s ease;
+    }
+    .Header-ul {
+        width: 100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem 64px;
+    }
+    /* Menú abierto (clase que añade el JS) */
+    .Header-nav.is-open {
+        max-height: 20rem;
+    }
+    /* Botón con el menú abierto: se cambia el icono */
+    .Header-button.is-open .Header-icon--open {
+        display: none;
+    }
+    .Header-button.is-open .Header-icon--close {
+        display: block;
+    }
+}
+
+/* ------------------ Subheader Style ------------------ */
+
+.Subheader {
+    width: 100%;
+    min-height: var(--subheader-height);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Outfit', sans-serif;
+
+    padding: 1rem 64px;
+    /* Compensa el top: el .Hero empieza justo donde acaba el Subheader */
+    margin-bottom: var(--header-height);
+    border-bottom: .5008px solid var(--color-black);
+
+
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    top: var(--header-height);
+    z-index: 0;
+    
+}
+.Subheader-h1 {
+}
+.Subheader-Location {
+    width: fit-content;
+    min-height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    
+}
+.Location-img{
+    width: 20px;
+    height: auto;
+    color: var(--color-primary);
+}
+
+.Location-h2 {
+}
+
+/* --------------- Hero Style --------------- */
+
+.Hero {
+    width: 100%;
+    height: calc(100vh - var(--header-height) - var(--subheader-height));
+    /* En ventanas bajas evita que el overflow recorte el botón */
+    min-height: 42rem;
+    padding: 7rem 64px 7.5rem;
+    /* background-color: green; */
+
+    display: grid;
+    grid-template-columns: 53.8125rem 1fr;
+    /* La fila encoge con el .Hero para que el texto siga centrado en ventanas bajas */
+    grid-template-rows: minmax(0, 42rem);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+.Hero-col {
+}
+.Hero-col--left {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4.5rem;
+}
+.Hero-chip {
+    width: fit-content;
+    min-height: fit-content;
+    padding: var(--chip-padding);
+    border: var(--chip-border);
+    border-radius: var(--chip-border-radius);
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: var(--chip-text-size);
+}
+.Hero-text {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+.Hero-h1 {
+}
+.Hero-h1--greeting {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+
+    color: var(--color-black);
+
+}
+.Hero-h1--name {
+    font-family: 'Climate Crisis', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+
+    color: var(--color-black);
+}
+.Hero-square {
+    font-family: 'Climate Crisis', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+
+    color: var(--color-primary);
+}
+.Hero-h1--role {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 3.5rem;
+
+    color: var(--color-grey);
+}
+.Hero-p {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+
+.Hero-button{
+    width: fit-content;
+
+    padding: var(--chip-padding);
+    border-radius: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-black);
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: var(--chip-text-size);
+    cursor: pointer;
+}
+/* Caja del retrato del marco: su alto es un % del .Hero (96.5% = 913px a 1920x1080) y el ancho
+   sale de la proporción de la imagen. Anclada a la esquina inferior derecha de la sección
+   para que apoye siempre en el .Content, sea cual sea el alto de ventana */
+.Hero-col--right {
+    position: absolute;
+    right: .5625rem;
+    bottom: 0;
+    height: 96.5%;
+    aspect-ratio: 786 / 904;
+}
+.Hero-img {
+}
+/* Hero apilado: texto arriba y retrato centrado debajo, sin solaparse */
+@media (max-width: 1280px) {
+    .Hero {
+        height: auto;
+        min-height: 0;
+        padding: 3rem 4rem 0;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+    }
+    .Hero-col--left {
+        height: auto;
+        gap: 2.5rem;
+    }
+    .Hero-h1--greeting,
+    .Hero-h1--name,
+    .Hero-square {
+        font-size: clamp(2.25rem, 9.5vw, 5rem);
+    }
+    .Hero-h1--role {
+        display: block;
+        font-size: clamp(1.75rem, 7vw, 3.5rem);
+    }
+    .Hero-p {
+        font-size: clamp(1.125rem, 4.5vw, 1.75rem);
+    }
+    .Hero-col--right {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+}
+
+/* ------------------ Rest of the page Style ------------------ */
+
+.Content {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--color-black);
+}
+
+/* ------------------ Career section Style ------------------ */
+
+
+.Content-Career {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--color-black);
+    padding: 88px 64px;
+
+
+    color: var(--color-white);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24.0625rem;
+
+}
+.Career-col {
+}
+.Career-col--left {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+.Career-h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.Career-p {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+}
+.Career-col--right {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+.Career-timeline {
+    font-family: 'Outfit', sans-serif;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem
+}
+/* Divisorias: centradas en el gap de 1.5rem que separa los bloques */
+.Career-timeline--1,
+.Career-timeline--2 {
+    position: relative;
+}
+.Career-timeline--1::after,
+.Career-timeline--2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.75rem;
+
+    width: 100%;
+    height: .5008px;
+    background-color: var(--color-white);
+}
+.Career-timeline--1 {
+
+}
+.Career-Title {
+    font-family: 'Outfit', sans-serif;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+}
+.Title-h3 {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+.Title-date {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.Career-detail {
+    font-size: 1rem;
+    font-weight: 300;
+}
+.Career-timeline--2 {
+}
+.Career-timeline--3 {
+}
+
+/* ------------------ Projects Grid Style ------------------ */
+
+.Projects {
+    font-family: 'Outfit', sans-serif;
+    padding: 0 64px;
+
+}
+.Projects-title {
+    margin-bottom: 56px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+       
+
+    color: var(--color-white);
+    
+}
+.Projects-h3 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+.Projects-Button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+.Button-span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.625rem;
+    font-weight: 500;
+    color: var(--color-white);
+
+
+}
+.Button-icon {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-primary);
+    padding: .5rem;
+    border-radius: 50%;
+}
+.bi {
+}
+.bi-arrow-up-right {
+}
+/* Trayectoria y proyectos en móvil: una columna y márgenes más estrechos */
+@media (max-width: 1280px) {
+    .Hero {
+        padding: 3rem 1.5rem 0;
+    }
+    .Content-Career {
+        padding: 4rem 1.5rem;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3rem;
+    }
+    .Career-Title {
+        gap: 1rem;
+    }
+    .Projects {
+        padding: 0 1.5rem;
+    }
+    .Projects-title {
+        flex-flow: row wrap;
+        gap: 1rem;
+    }
+}
+
+
+/* Saltos de columna fijos: 4 → 2 → 1, sin pasar nunca por 3 */
+.Projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+@media (max-width: 84rem) {
+    .Projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 48rem) {
+    .Projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.Projects-Card {
+    width: 100%;
+    aspect-ratio: 385 / 480;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    padding: 16px;
+
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+/* La imagen cubre la tarjeta entera, como el fondo del componente en Figma */
+.Card-img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+}
+/* Oscurece la imagen hacia abajo: negro puro del 90% abajo al 0% arriba */
+.Projects-Card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0));
+}
+/* Relative y por encima del degradado, que es el último hijo de la tarjeta */
+.Card-info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+}
+.Card-Title {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 6px;
+}
+.Title-h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.Title-arrow {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+
+    color: var(--color-black);
+}
+.Card-chips {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+
+}
+.Card-chip {
+    width: fit-content;
+    min-height: fit-content;
+    padding: 4px 8px;
+    background-color: rgba(30, 30, 30, 65%);
+
+    color: var(--color-white);
+    border: .0625rem solid rgba(130, 130, 130, 100);
+    border-radius: var(--chip-border-radius);
+    backdrop-filter: blur(2px);
+}
+
+
+/* ---------------- Marquee Style ------------------ */
+
+
+.Marquee {
+    width: 100%;
+    overflow: hidden;
+}
+.Marquee-container {
+    width: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    animation: marquee-scroll 20s linear infinite;
+}
+.Marquee-content {
+    width: max-content;
+    height: 175px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex: 0 0 auto;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 139px;
+    color: var(--color-white);
+}
+.Marquee-content > * {
+    flex: 0 0 auto;
+}
+.Marquee-content svg {
+    width: 75px;
+    height: 68px;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Marquee-container {
+        animation-play-state: paused;
+    }
+}
+
+
+/* --------------- Contact section Style ------------------ */
+
+
+.Contact {
+    width: 100%;
+    height: fit-content;
+    padding: 0 64px 5rem;
+
+    
+    display: flex;
+    flex-flow: column nowrap;
+}
+.Contact-h2 {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 48px;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--color-white);
+}
+
+.Contact-h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: .5008px;
+    background-color: var(--color-white);
+    margin-top: 48px;
+}
+
+.Contact-info {
+    width: 100%;
+    height: fit-content;
+
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 320px;
+}
+.Contact-p {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--color-white);
+}
+.Contact-data {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap:32px;
+}
+.Contact-email {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: underline;
+    color: var(--color-white);
+}
+.Contact-Button {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-primary);
+    padding: var(--chip-padding);
+    border-radius: var(--chip-border-radius);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: centre;
+}
+.Button-span {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1.625rem;
+    color: var(--color-black);
+}
+.Button-icon {
+}
+.Contact-rrss {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--color-white);
+}
+.Contact-linkedin {
+}
+.Contact-behance {
+}
+.Contact-github {
+}
+.Contact-fiverr {
+}
+/* Contacto en móvil: una sola columna y redes que pueden saltar de línea */
+@media (max-width: 850px) {
+    .Contact {
+        padding: 0 1.5rem 5rem;
+    }
+    .Contact-info {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+    .Contact-rrss {
+        flex-flow: row wrap;
+    }
+}
+
+/* ---------------Footer section Style ------------------ */
+
+.Footer {
+    width: 100%;
+    min-height: 204px;
+    background-color: var(--color-white);
+    padding: 48px 64px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer-img {
+    width: 10.9375rem;
+    height: auto;
+}
+.Footer-p {
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Footer-ul {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+.Footer-linkedin {
+}
+.Footer-behance {
+}
+.Footer-github {
+}
+.Footer-fiverr {
+}
+/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
+@media (max-width: 768px) {
+    .Footer {
+        padding: 3rem 1.5rem;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .Footer-ul {
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+}
+
+/* ------------------ Picture ------------------ */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+picture {
+    display: contents;
+}

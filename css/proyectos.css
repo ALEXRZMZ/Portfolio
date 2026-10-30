@@ -1,0 +1,760 @@
+/* Reset CSS / Normalizar CSS */
+:root{
+       scroll-behavior: smooth;
+        font-size:100%;
+        background-color: var(--color-white);
+
+        --color-black: #1E1E1E;
+        --color-white: #EEEDF6;
+        --color-primary: #5CF87D;
+        --color-grey: #454545;
+        --chip-border-radius: 999px;
+        --chip-padding: 8px 24px;
+        --chip-border: 1px solid var(--color-black);
+        --chip-text-size: 16px
+}
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    display: block;
+    color:inherit;
+    text-decoration: none;
+}
+p a{
+    display: inline;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong , em , mark, pre, code{
+    font:inherit;
+}
+mark{
+    background-color:transparent;
+}
+picture , img, video , iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+svg{
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form , input , select , option , textarea , label , fieldset , legend , button{
+    display: block;
+    font:inherit;
+    background-color: initial;
+}
+fieldset {
+    border : none ;
+}
+button , label{
+    cursor: pointer;
+}
+
+/* ------------------ Header Style ------------------ */
+
+.Header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    /* min-height: 5rem; */
+    border-bottom: .0625rem solid var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 0 4rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 2;
+
+    background: rgba(238, 237, 246, 0.578);
+    backdrop-filter: blur(1.625rem);
+    -webkit-backdrop-filter: blur(1.625rem);
+
+}
+
+.Header-logo {
+    width: fit-content;
+    min-height: 80px;
+    /* background-color:blue; */
+
+    display: flex;
+    align-items: center;    
+}
+
+.Header-img {
+    width: 175px;
+    height: auto;
+}
+.Header-nav {
+    width:fit-content;
+    /* background-color:green; */
+    align-items: center;
+    display: flex;
+}
+.Header-ul {
+    width:fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+
+    gap: 45px;
+
+}
+.Header-li--Home {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+
+}
+.Header-li--Proyectos {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Sobremi {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+.Header-li--Contacto {
+    width: fit-content;
+    min-height:fit-content;
+    /* background-color: red; */
+}
+/* Botón del menú: oculto en escritorio */
+.Header-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-black);
+    cursor: pointer;
+}
+/* Iconos del botón: por defecto se ve el de abrir */
+.Header-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.Header-icon--close {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    /* En móvil se muestra el botón */
+    .Header-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Menú cerrado: altura 0 y contenido oculto */
+    .Header-nav {
+        width: 100%;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--color-black);
+        transition: max-height .3s ease;
+    }
+    .Header-ul {
+        width: 100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem 64px;
+    }
+    /* Menú abierto (clase que añade el JS) */
+    .Header-nav.is-open {
+        max-height: 20rem;
+    }
+    /* Botón con el menú abierto: se cambia el icono */
+    .Header-button.is-open .Header-icon--open {
+        display: none;
+    }
+    .Header-button.is-open .Header-icon--close {
+        display: block;
+    }
+}
+
+/* ------------------ Subheader Style ------------------ */
+
+.Subheader {
+    width: 100%;
+    /* min-height: 5rem; */
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Outfit', sans-serif;
+
+    padding: 16px 4rem;
+    margin-bottom: 143px;
+    border-bottom: .0313rem solid var(--color-black);
+
+
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    top: 80px;
+    z-index: 0;
+    
+}
+.Subheader-h1 {
+}
+.Subheader-Location {
+    width: fit-content;
+    min-height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    
+}
+.Location-img{
+    width: 1.25rem;
+    height: auto;
+    color: var(--color-primary);
+}
+
+.Location-h2 {
+}
+
+
+
+.Content {
+    width: 100%;
+    height: fit-content;
+}
+.Content-Projects {
+    width: 100%;
+    height: fit-content;
+    padding: 0 4rem;
+}
+.Projects-title {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+
+
+}
+.Projects-h2 {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+
+}
+.Projects-square {
+    font-family: 'Climate Crisis', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.Projects-p {
+    /* Responsive (hecho con IA, Claude): ancho máximo en vez de fijo para que no se salga en móvil */
+    width: 100%;
+    max-width: 49.375rem;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+.Projects-nav {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items:baseline;
+    justify-content: space-between;
+}
+.Projects-filter {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .625rem;
+
+}
+.Projects-btn {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    border: .0625rem solid var(--color-black);
+    padding: .5rem 1.5rem;
+    border-radius: var(--chip-border-radius);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.Projects-btn.is-active{
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.Projects-span {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+.Projects-grid {
+    width: 100%;
+    padding: 4rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(6, 10.25rem);
+    gap: 1.25rem;
+}
+.Projects-Card {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 1rem;
+
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+
+.Card-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Projects-Card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0));
+}
+.Card-info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+}
+.Card-Title {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 6px;
+}
+.Title-h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.Title-arrow {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+
+    color: var(--color-black);
+}
+.Card-chips {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+
+}
+.Card-chip {
+    width: fit-content;
+    min-height: fit-content;
+    padding: 4px 8px;
+    background-color: rgba(30, 30, 30, 65%);
+
+    color: var(--color-white);
+    border: .0625rem solid rgba(130, 130, 130, 100);
+    border-radius: var(--chip-border-radius);
+    backdrop-filter: blur(2px);
+}
+.Projects-Card--hm {
+    grid-column: 1 / 6;
+    grid-row: 1 / 4;
+
+}
+.Projects-Card--bellalux {
+    grid-column: 6 / 9;
+    grid-row: 1 / 4;
+}
+.Projects-Card--circulo {
+    grid-column: 1 / 4;
+    grid-row: 4 / 7;
+}
+.Projects-Card--ecohorno {
+    grid-column: 4 / 6;
+    grid-row: 4 / 7;
+}
+.Projects-Card--portfolio {
+    grid-column: 6 / 9;
+    grid-row: 4 / 7;
+}
+
+/* ------------------ Projects-grid Responsive ------------------ */
+
+/* Tablet / laptop pequeño: 6 columnas, 8 filas */
+@media (max-width: 1450px) {
+    .Projects-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: repeat(8, 8.5rem);
+    }
+    .Projects-Card--hm {
+        grid-column: 1 / 7;
+        grid-row: 1 / 4;
+    }
+    .Projects-Card--bellalux {
+        grid-column: 1 / 4;
+        grid-row: 4 / 7;
+    }
+    .Projects-Card--circulo {
+        grid-column: 4 / 7;
+        grid-row: 4 / 7;
+    }
+    .Projects-Card--ecohorno {
+        grid-column: 1 / 4;
+        grid-row: 7 / 9;
+    }
+    .Projects-Card--portfolio {
+        grid-column: 4 / 7;
+        grid-row: 7 / 9;
+    }
+}
+
+/* Móvil: una sola columna, tarjetas apiladas */
+@media (max-width: 650px) {
+    .Projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: none;
+        grid-auto-rows: 20rem;
+    }
+    .Projects-Card--hm,
+    .Projects-Card--bellalux,
+    .Projects-Card--circulo,
+    .Projects-Card--ecohorno,
+    .Projects-Card--portfolio {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+/* ------------------ Filtro de proyectos ------------------ */
+
+/* Tarjeta que no coincide con el filtro */
+.Projects-Card.is-hidden {
+    display: none;
+}
+/* Rejilla con un filtro activo: las tarjetas se colocan por orden */
+.Projects-grid.is-filtered {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 20rem;
+}
+.Projects-grid.is-filtered .Projects-Card {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+@media (max-width: 650px) {
+    .Projects-grid.is-filtered {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+
+/* ---------------- Marquee Style ------------------ */
+
+
+.Marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-black);
+}
+.Marquee-container {
+    width: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    animation: marquee-scroll 20s linear infinite;
+}
+.Marquee-content {
+    width: max-content;
+    height: 175px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex: 0 0 auto;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 139px;
+    color: var(--color-white);
+}
+.Marquee-content > * {
+    flex: 0 0 auto;
+}
+.Marquee-content svg {
+    width: 75px;
+    height: 68px;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Marquee-container {
+        animation-play-state: paused;
+    }
+}
+
+
+/* --------------- Contact section Style ------------------ */
+
+
+.Contact {
+    width: 100%;
+    height: fit-content;
+    padding: 0 4rem 5rem;
+    background-color: var(--color-black);
+
+    
+    display: flex;
+    flex-flow: column nowrap;
+}
+.Contact-h2 {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 48px;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--color-white);
+}
+
+.Contact-h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: .5008px;
+    background-color: var(--color-white);
+    margin-top: 48px;
+}
+
+.Contact-info {
+    width: 100%;
+    height: fit-content;
+
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 320px;
+}
+.Contact-p {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--color-white);
+}
+.Contact-data {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap:32px;
+}
+.Contact-email {
+    width: 100%;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: underline;
+    color: var(--color-white);
+}
+.Contact-Button {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-primary);
+    padding: var(--chip-padding);
+    border-radius: var(--chip-border-radius);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: centre;
+}
+.Button-span {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1.625rem;
+    color: var(--color-black);
+}
+.Button-icon {
+}
+.Contact-rrss {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--color-white);
+}
+.Contact-linkedin {
+}
+.Contact-behance {
+}
+.Contact-github {
+}
+.Contact-fiverr {
+}
+/* Contacto en móvil: una sola columna y redes que pueden saltar de línea */
+@media (max-width: 850px) {
+    .Contact {
+        padding: 0 1.5rem 5rem;
+    }
+    .Contact-info {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+    .Contact-rrss {
+        flex-flow: row wrap;
+    }
+}
+
+/* ---------------Footer section Style ------------------ */
+
+.Footer {
+    width: 100%;
+    min-height: 204px;
+    background-color: var(--color-white);
+    padding: 48px 64px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer-img {
+    width: 10.9375rem;
+    height: auto;
+}
+.Footer-p {
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Footer-ul {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5rem;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+.Footer-linkedin {
+}
+.Footer-behance {
+}
+.Footer-github {
+}
+.Footer-fiverr {
+}
+/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
+@media (max-width: 768px) {
+    .Footer {
+        padding: 3rem 1.5rem;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .Footer-ul {
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+}
+/* ------------------ Picture ------------------ */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+picture {
+    display: contents;
+}
+
+/* ------------------ Filtro responsive (hecho con IA, Claude) ------------------ */
+/* En móvil el filtro y el contador se apilan y los botones saltan de línea */
+@media (max-width: 768px) {
+    .Projects-nav {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .Projects-filter {
+        width: 100%;
+        flex-flow: row wrap;
+    }
+}
