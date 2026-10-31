@@ -80,6 +80,7 @@ button , label{
     justify-content: space-between;
 
     position: fixed;
+    top: 0;
     z-index: 2;
 
     background: rgba(238, 237, 246, 0.578);
@@ -136,7 +137,7 @@ button , label{
     min-height:fit-content;
     /* background-color: red; */
 }
-/* Botón del menú: oculto en escritorio */
+/* Botón del menú: oculto en escritorio (código propuesto por IA, Claude) */
 .Header-button {
     display: none;
     align-items: center;
@@ -147,7 +148,7 @@ button , label{
     color: var(--color-black);
     cursor: pointer;
 }
-/* Iconos del botón: por defecto se ve el de abrir */
+/* Iconos del botón: por defecto se ve el de abrir (código propuesto por IA, Claude) */
 .Header-icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -157,13 +158,13 @@ button , label{
 }
 
 @media (max-width: 48rem) {
-    /* En móvil se muestra el botón */
+    /* En móvil se muestra el botón (código propuesto por IA, Claude) */
     .Header-button {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    /* Menú cerrado: altura 0 y contenido oculto */
+    /* Menú cerrado: altura 0 y contenido oculto (código propuesto por IA, Claude) */
     .Header-nav {
         width: 100%;
         position: fixed;
@@ -183,11 +184,11 @@ button , label{
         gap: 1.5rem;
         padding: 1.5rem 64px;
     }
-    /* Menú abierto (clase que añade el JS) */
+    /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
         max-height: 20rem;
     }
-    /* Botón con el menú abierto: se cambia el icono */
+    /* Botón con el menú abierto: se cambia el icono (código propuesto por IA, Claude) */
     .Header-button.is-open .Header-icon--open {
         display: none;
     }
@@ -219,8 +220,6 @@ button , label{
     z-index: 0;
     
 }
-.Subheader-h1 {
-}
 .Subheader-Location {
     width: fit-content;
     min-height: fit-content;
@@ -236,8 +235,6 @@ button , label{
     color: var(--color-primary);
 }
 
-.Location-h2 {
-}
 
 /* ------------------ Project Hero Style ------------------ */
 
@@ -1160,16 +1157,8 @@ button , label{
     font-size: 12px;
 
 }
-.Footer-linkedin {
-}
-.Footer-behance {
-}
-.Footer-github {
-}
-.Footer-fiverr {
-}
-/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
-@media (max-width: 768px) {
+/* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
+@media (max-width: 1165px) {
     .Footer {
         padding: 3rem 1.5rem;
         flex-flow: column nowrap;
@@ -1183,13 +1172,13 @@ button , label{
 }
 
 /* ------------------ Picture ------------------ */
-/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
 }
 
 /* ------------------ Imágenes de la sección solución ------------------ */
-/* La imagen ocupa el espacio libre de la tarjeta sin deformarse */
+/* La imagen ocupa el espacio libre de la tarjeta sin deformarse (hecho con IA, Claude) */
 .Solution-img {
     flex: 1 1 0;
     min-height: 0;
@@ -1198,7 +1187,7 @@ picture {
     object-fit: contain;
 }
 
-/* Capturas planas de pantalla: llenan el hueco con esquinas redondeadas */
+/* Capturas planas de pantalla: llenan el hueco con esquinas redondeadas (hecho con IA, Claude) */
 .Solution-img--captura {
     object-fit: cover;
     object-position: top center;
@@ -1206,20 +1195,20 @@ picture {
 }
 
 /* ------------------ Documentación: imágenes y paleta ------------------ */
-/* Variante clara de la tarjeta para logotipos oscuros */
+/* Variante clara de la tarjeta para logotipos oscuros (hecho con IA, Claude) */
 .Documentation-media--light {
     background-color: var(--color-white);
 }
 .Documentation-media--light .Documentation-caption {
     color: rgba(30, 30, 30, 0.6);
 }
-/* Imagen (SVG) dentro de la tarjeta: se ajusta sin deformarse */
+/* Imagen (SVG) dentro de la tarjeta: se ajusta sin deformarse (hecho con IA, Claude) */
 .Documentation-img {
     width: 80%;
     max-height: 60%;
     object-fit: contain;
 }
-/* Paleta de color hecha en código */
+/* Paleta de color hecha en código (hecho con IA, Claude) */
 .Palette {
     --palette-corporativo: #276E77;
     --palette-negro: #202020;
@@ -1257,7 +1246,7 @@ picture {
     letter-spacing: 0.05em;
 }
 
-/* Capturas de pantalla dentro de la documentación: llenan la tarjeta */
+/* Capturas de pantalla dentro de la documentación: llenan la tarjeta (hecho con IA, Claude) */
 .Documentation-img--captura {
     width: 100%;
     max-height: none;
@@ -1268,7 +1257,7 @@ picture {
     object-position: top center;
     border-radius: 0.75rem;
 }
-/* Muestra tipográfica hecha en código */
+/* Muestra tipográfica hecha en código (hecho con IA, Claude) */
 .Specimen {
     width: 100%;
     padding: 1rem;
@@ -1291,7 +1280,7 @@ picture {
 .Specimen-sample--display {
     font-family: 'Climate Crisis', sans-serif;
 }
-/* Paleta de la propia web */
+/* Paleta de la propia web (hecho con IA, Claude) */
 .Palette-color--webnegro {
     background-color: var(--color-black);
     color: var(--color-white);
@@ -1336,4 +1325,31 @@ picture {
         font-size: 2rem;
         overflow-wrap: break-word;
     }
+}
+
+/* ------------------ Subheader responsive (hecho con IA, Claude Code) ------------------ */
+/* Sin Subheader, la portada baja la altura del Header fijo para no quedar debajo de él */
+@media (max-width: 650px) {
+    .Subheader {
+        display: none;
+    }
+    .ProjectHero {
+        margin-top: 5rem;
+    }
+}
+
+/* ------------------ Portada de proyecto: chips arriba (hecho con IA, Claude) ------------------ */
+/* El margen automático empuja el bloque de título al fondo y deja los chips arriba */
+.ProjectHero-info {
+    margin-top: auto;
+}
+
+/* Imagen de documentación completa, sin recortar (hecho con IA, Claude) */
+.Documentation-img--contain {
+    width: 100%;
+    max-height: none;
+    flex: 1 1 0;
+    min-height: 0;
+    margin-top: 1rem;
+    object-fit: contain;
 }

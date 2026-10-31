@@ -8,6 +8,7 @@
         --color-white: #EEEDF6;
         --color-primary: #5CF87D;
         --color-grey: #454545;
+        /* Alturas de cabecera para el hero (hecho con IA, Claude Code) */
         --header-height: 5rem;
         --subheader-height: 3.375rem;
         --chip-border-radius: 62.4375rem;
@@ -81,6 +82,7 @@ button , label{
     justify-content: space-between;
 
     position: fixed;
+    top: 0;
     z-index: 2;
 
     background: rgba(238, 237, 246, 0.578);
@@ -137,7 +139,7 @@ button , label{
     min-height:fit-content;
     /* background-color: red; */
 }
-/* Botón del menú: oculto en escritorio */
+/* Botón del menú: oculto en escritorio (código propuesto por IA, Claude) */
 .Header-button {
     display: none;
     align-items: center;
@@ -148,7 +150,7 @@ button , label{
     color: var(--color-black);
     cursor: pointer;
 }
-/* Iconos del botón: por defecto se ve el de abrir */
+/* Iconos del botón: por defecto se ve el de abrir (código propuesto por IA, Claude) */
 .Header-icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -158,13 +160,13 @@ button , label{
 }
 
 @media (max-width: 48rem) {
-    /* En móvil se muestra el botón */
+    /* En móvil se muestra el botón (código propuesto por IA, Claude) */
     .Header-button {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    /* Menú cerrado: altura 0 y contenido oculto */
+    /* Menú cerrado: altura 0 y contenido oculto (código propuesto por IA, Claude) */
     .Header-nav {
         width: 100%;
         position: fixed;
@@ -184,11 +186,11 @@ button , label{
         gap: 1.5rem;
         padding: 1.5rem 64px;
     }
-    /* Menú abierto (clase que añade el JS) */
+    /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
         max-height: 20rem;
     }
-    /* Botón con el menú abierto: se cambia el icono */
+    /* Botón con el menú abierto: se cambia el icono (código propuesto por IA, Claude) */
     .Header-button.is-open .Header-icon--open {
         display: none;
     }
@@ -207,7 +209,7 @@ button , label{
     font-family: 'Outfit', sans-serif;
 
     padding: 1rem 64px;
-    /* Compensa el top: el .Hero empieza justo donde acaba el Subheader */
+    /* Compensa el top: el .Hero empieza justo donde acaba el Subheader (hecho con IA, Claude Code) */
     margin-bottom: var(--header-height);
     border-bottom: .5008px solid var(--color-black);
 
@@ -220,8 +222,6 @@ button , label{
     top: var(--header-height);
     z-index: 0;
     
-}
-.Subheader-h1 {
 }
 .Subheader-Location {
     width: fit-content;
@@ -238,7 +238,14 @@ button , label{
     color: var(--color-primary);
 }
 
-.Location-h2 {
+/* Sin Subheader, el .Hero baja la altura del Header fijo para no quedar debajo de él (hecho con IA, Claude Code) */
+@media (max-width: 650px) {
+    .Subheader {
+        display: none;
+    }
+    .Hero {
+        margin-top: var(--header-height);
+    }
 }
 
 /* --------------- Hero Style --------------- */
@@ -246,21 +253,19 @@ button , label{
 .Hero {
     width: 100%;
     height: calc(100vh - var(--header-height) - var(--subheader-height));
-    /* En ventanas bajas evita que el overflow recorte el botón */
+    /* En ventanas bajas evita que el overflow recorte el botón (hecho con IA, Claude Code) */
     min-height: 42rem;
     padding: 7rem 64px 7.5rem;
     /* background-color: green; */
 
     display: grid;
     grid-template-columns: 53.8125rem 1fr;
-    /* La fila encoge con el .Hero para que el texto siga centrado en ventanas bajas */
+    /* La fila encoge con el .Hero para que el texto siga centrado en ventanas bajas (hecho con IA, Claude Code) */
     grid-template-rows: minmax(0, 42rem);
     align-items: center;
     position: relative;
     overflow: hidden;
 
-}
-.Hero-col {
 }
 .Hero-col--left {
     width: 100%;
@@ -288,8 +293,6 @@ button , label{
     display: flex;
     flex-flow: column nowrap;
     gap: 2rem;
-}
-.Hero-h1 {
 }
 .Hero-h1--greeting {
     font-family: 'Outfit', sans-serif;
@@ -327,6 +330,7 @@ button , label{
 }
 
 .Hero-button{
+    display: inline-block;
     width: fit-content;
 
     padding: var(--chip-padding);
@@ -341,7 +345,7 @@ button , label{
 }
 /* Caja del retrato del marco: su alto es un % del .Hero (96.5% = 913px a 1920x1080) y el ancho
    sale de la proporción de la imagen. Anclada a la esquina inferior derecha de la sección
-   para que apoye siempre en el .Content, sea cual sea el alto de ventana */
+   para que apoye siempre en el .Content, sea cual sea el alto de ventana (hecho con IA, Claude Code) */
 .Hero-col--right {
     position: absolute;
     right: .5625rem;
@@ -349,17 +353,14 @@ button , label{
     height: 96.5%;
     aspect-ratio: 786 / 904;
 }
-.Hero-img {
-}
-/* Hero apilado: texto arriba y retrato centrado debajo, sin solaparse */
-@media (max-width: 1280px) {
+/* Hero sin retrato: solo el texto, a todo el ancho (hecho con IA, Claude Code) */
+@media (max-width: 1450px) {
     .Hero {
         height: auto;
         min-height: 0;
-        padding: 3rem 4rem 0;
+        padding: 3rem 4rem;
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: auto;
-        gap: 2rem;
     }
     .Hero-col--left {
         height: auto;
@@ -378,11 +379,7 @@ button , label{
         font-size: clamp(1.125rem, 4.5vw, 1.75rem);
     }
     .Hero-col--right {
-        position: static;
-        width: 100%;
-        height: auto;
-        max-width: 30rem;
-        margin: 0 auto;
+        display: none;
     }
 }
 
@@ -410,8 +407,6 @@ button , label{
     grid-template-columns: 1fr 1fr;
     gap: 24.0625rem;
 
-}
-.Career-col {
 }
 .Career-col--left {
     display: flex;
@@ -456,9 +451,6 @@ button , label{
     height: .5008px;
     background-color: var(--color-white);
 }
-.Career-timeline--1 {
-
-}
 .Career-Title {
     font-family: 'Outfit', sans-serif;
     
@@ -478,16 +470,13 @@ button , label{
     font-size: 1rem;
     font-weight: 300;
 }
-.Career-timeline--2 {
-}
-.Career-timeline--3 {
-}
 
 /* ------------------ Projects Grid Style ------------------ */
 
 .Projects {
     font-family: 'Outfit', sans-serif;
     padding: 0 64px;
+    margin-bottom: 5rem;
 
 }
 .Projects-title {
@@ -502,7 +491,7 @@ button , label{
     
 }
 .Projects-h3 {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 500;
 }
 .Projects-Button {
@@ -511,12 +500,12 @@ button , label{
     align-items: center;
     gap: 1rem;
 }
-.Button-span {
+/* Limitado a este botón: .Button-span se redefine en negro más abajo para el de Contacto (hecho con IA, Claude Code) */
+.Projects-Button .Button-span {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.625rem;
-    font-weight: 500;
+    font-size: 1.3125rem;
+    font-weight: 300;
     color: var(--color-white);
-
 
 }
 .Button-icon {
@@ -526,14 +515,10 @@ button , label{
     padding: .5rem;
     border-radius: 50%;
 }
-.bi {
-}
-.bi-arrow-up-right {
-}
-/* Trayectoria y proyectos en móvil: una columna y márgenes más estrechos */
+/* Trayectoria y proyectos en móvil: una columna y márgenes más estrechos (hecho con IA, Claude Code) */
 @media (max-width: 1280px) {
     .Hero {
-        padding: 3rem 1.5rem 0;
+        padding: 3rem 1.5rem;
     }
     .Content-Career {
         padding: 4rem 1.5rem;
@@ -559,12 +544,12 @@ button , label{
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
-@media (max-width: 84rem) {
+@media (max-width: 1100px) {
     .Projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 48rem) {
+@media (max-width: 768px) {
     .Projects-grid {
         grid-template-columns: 1fr;
     }
@@ -776,15 +761,12 @@ gap: 320px;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    justify-content: centre;
 }
 .Button-span {
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 1.625rem;
+    font-size: 1rem;
     color: var(--color-black);
-}
-.Button-icon {
 }
 .Contact-rrss {
     width: 100%;
@@ -800,16 +782,8 @@ gap: 320px;
     text-decoration: underline;
     color: var(--color-white);
 }
-.Contact-linkedin {
-}
-.Contact-behance {
-}
-.Contact-github {
-}
-.Contact-fiverr {
-}
-/* Contacto en móvil: una sola columna y redes que pueden saltar de línea */
-@media (max-width: 850px) {
+/* Contacto en móvil: una sola columna y redes que pueden saltar de línea (hecho con IA, Claude Code) */
+@media (max-width: 1095px) {
     .Contact {
         padding: 0 1.5rem 5rem;
     }
@@ -860,16 +834,8 @@ gap: 320px;
     font-size: 12px;
 
 }
-.Footer-linkedin {
-}
-.Footer-behance {
-}
-.Footer-github {
-}
-.Footer-fiverr {
-}
-/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
-@media (max-width: 768px) {
+/* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
+@media (max-width: 1165px) {
     .Footer {
         padding: 3rem 1.5rem;
         flex-flow: column nowrap;
@@ -883,7 +849,7 @@ gap: 320px;
 }
 
 /* ------------------ Picture ------------------ */
-/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
 }

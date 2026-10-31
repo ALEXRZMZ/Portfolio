@@ -79,6 +79,7 @@ button , label{
     justify-content: space-between;
 
     position: fixed;
+    top: 0;
     z-index: 2;
 
     background: rgba(238, 237, 246, 0.578);
@@ -135,7 +136,7 @@ button , label{
     min-height:fit-content;
     /* background-color: red; */
 }
-/* Botón del menú: oculto en escritorio */
+/* Botón del menú: oculto en escritorio (código propuesto por IA, Claude) */
 .Header-button {
     display: none;
     align-items: center;
@@ -146,7 +147,7 @@ button , label{
     color: var(--color-black);
     cursor: pointer;
 }
-/* Iconos del botón: por defecto se ve el de abrir */
+/* Iconos del botón: por defecto se ve el de abrir (código propuesto por IA, Claude) */
 .Header-icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -156,13 +157,13 @@ button , label{
 }
 
 @media (max-width: 48rem) {
-    /* En móvil se muestra el botón */
+    /* En móvil se muestra el botón (código propuesto por IA, Claude) */
     .Header-button {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    /* Menú cerrado: altura 0 y contenido oculto */
+    /* Menú cerrado: altura 0 y contenido oculto (código propuesto por IA, Claude) */
     .Header-nav {
         width: 100%;
         position: fixed;
@@ -182,11 +183,11 @@ button , label{
         gap: 1.5rem;
         padding: 1.5rem 64px;
     }
-    /* Menú abierto (clase que añade el JS) */
+    /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
         max-height: 20rem;
     }
-    /* Botón con el menú abierto: se cambia el icono */
+    /* Botón con el menú abierto: se cambia el icono (código propuesto por IA, Claude) */
     .Header-button.is-open .Header-icon--open {
         display: none;
     }
@@ -218,8 +219,6 @@ button , label{
     z-index: 0;
     
 }
-.Subheader-h1 {
-}
 .Subheader-Location {
     width: fit-content;
     min-height: fit-content;
@@ -235,8 +234,6 @@ button , label{
     color: var(--color-primary);
 }
 
-.Location-h2 {
-}
 
 
 
@@ -375,6 +372,7 @@ button , label{
     gap: 6px;
 }
 .Title-h4 {
+    font-family: 'Outfit', sans-serif;
     font-size: 18px;
     font-weight: 600;
     color: var(--color-white);
@@ -479,11 +477,11 @@ button , label{
 
 /* ------------------ Filtro de proyectos ------------------ */
 
-/* Tarjeta que no coincide con el filtro */
+/* Tarjeta que no coincide con el filtro (código propuesto por IA, Claude) */
 .Projects-Card.is-hidden {
     display: none;
 }
-/* Rejilla con un filtro activo: las tarjetas se colocan por orden */
+/* Rejilla con un filtro activo: las tarjetas se colocan por orden (código propuesto por IA, Claude) */
 .Projects-grid.is-filtered {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -634,15 +632,21 @@ gap: 320px;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    justify-content: centre;
+    justify-content: center;
 }
 .Button-span {
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 1.625rem;
+    font-size: 1rem;
     color: var(--color-black);
 }
-.Button-icon {
+/* Igual que en index.css (hecho con IA, Claude Code) */
+.Contact-Button .Button-icon {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-primary);
+    padding: .5rem;
+    border-radius: 50%;
 }
 .Contact-rrss {
     width: 100%;
@@ -658,15 +662,7 @@ gap: 320px;
     text-decoration: underline;
     color: var(--color-white);
 }
-.Contact-linkedin {
-}
-.Contact-behance {
-}
-.Contact-github {
-}
-.Contact-fiverr {
-}
-/* Contacto en móvil: una sola columna y redes que pueden saltar de línea */
+/* Contacto en móvil: una sola columna y redes que pueden saltar de línea (hecho con IA, Claude Code) */
 @media (max-width: 850px) {
     .Contact {
         padding: 0 1.5rem 5rem;
@@ -718,16 +714,8 @@ gap: 320px;
     font-size: 12px;
 
 }
-.Footer-linkedin {
-}
-.Footer-behance {
-}
-.Footer-github {
-}
-.Footer-fiverr {
-}
-/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
-@media (max-width: 768px) {
+/* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
+@media (max-width: 1165px) {
     .Footer {
         padding: 3rem 1.5rem;
         flex-flow: column nowrap;
@@ -740,7 +728,7 @@ gap: 320px;
     }
 }
 /* ------------------ Picture ------------------ */
-/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
 }
@@ -756,5 +744,16 @@ picture {
     .Projects-filter {
         width: 100%;
         flex-flow: row wrap;
+    }
+}
+
+/* ------------------ Subheader responsive (hecho con IA, Claude Code) ------------------ */
+/* Sin Subheader, el .Content hereda su margen: la altura del Header fijo más el hueco de 63px */
+@media (max-width: 650px) {
+    .Subheader {
+        display: none;
+    }
+    .Content {
+        margin-top: 143px;
     }
 }

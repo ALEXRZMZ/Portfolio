@@ -82,6 +82,7 @@ button , label{
     justify-content: space-between;
 
     position: fixed;
+    top: 0;
     z-index: 2;
 
     background: rgba(238, 237, 246, 0.578);
@@ -138,7 +139,7 @@ button , label{
     min-height:fit-content;
     /* background-color: red; */
 }
-/* Botón del menú: oculto en escritorio */
+/* Botón del menú: oculto en escritorio (código propuesto por IA, Claude) */
 .Header-button {
     display: none;
     align-items: center;
@@ -149,7 +150,7 @@ button , label{
     color: var(--color-black);
     cursor: pointer;
 }
-/* Iconos del botón: por defecto se ve el de abrir */
+/* Iconos del botón: por defecto se ve el de abrir (código propuesto por IA, Claude) */
 .Header-icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -159,13 +160,13 @@ button , label{
 }
 
 @media (max-width: 48rem) {
-    /* En móvil se muestra el botón */
+    /* En móvil se muestra el botón (código propuesto por IA, Claude) */
     .Header-button {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    /* Menú cerrado: altura 0 y contenido oculto */
+    /* Menú cerrado: altura 0 y contenido oculto (código propuesto por IA, Claude) */
     .Header-nav {
         width: 100%;
         position: fixed;
@@ -185,11 +186,11 @@ button , label{
         gap: 1.5rem;
         padding: 1.5rem 64px;
     }
-    /* Menú abierto (clase que añade el JS) */
+    /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
         max-height: 20rem;
     }
-    /* Botón con el menú abierto: se cambia el icono */
+    /* Botón con el menú abierto: se cambia el icono (código propuesto por IA, Claude) */
     .Header-button.is-open .Header-icon--open {
         display: none;
     }
@@ -222,8 +223,6 @@ button , label{
     z-index: 0;
     
 }
-.Subheader-h1 {
-}
 .Subheader-Location {
     width: fit-content;
     min-height: fit-content;
@@ -239,8 +238,6 @@ button , label{
     color: var(--color-primary);
 }
 
-.Location-h2 {
-}
 /* ------------------ Content Style ------------------ */
 
 .Content {
@@ -427,6 +424,7 @@ button , label{
 .Form-input::placeholder,
 .Form-textarea::placeholder {
     color: var(--form-text);
+    font-size: 1rem;
 }
 .Form-select {
     height: 47px;
@@ -519,7 +517,7 @@ button , label{
 /* ---------------Footer section Style ------------------ */
 
 .Footer {
-    /* Ocupa todas las columnas de la rejilla de .Content */
+    /* Ocupa todas las columnas de la rejilla de .Content (hecho con IA, Claude Code) */
     grid-column: 1 / -1;
     width: 100%;
     min-height: 204px;
@@ -556,16 +554,8 @@ button , label{
     font-size: 12px;
 
 }
-.Footer-linkedin {
-}
-.Footer-behance {
-}
-.Footer-github {
-}
-.Footer-fiverr {
-}
-/* Footer en móvil: apilado y con los enlaces en una fila que puede saltar de línea */
-@media (max-width: 768px) {
+/* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
+@media (max-width: 1165px) {
     .Footer {
         padding: 3rem 1.5rem;
         flex-flow: column nowrap;
@@ -578,7 +568,21 @@ button , label{
     }
 }
 /* ------------------ Picture ------------------ */
-/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque */
+/* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
+}
+
+/* ------------------ Subheader responsive (hecho con IA, Claude Code) ------------------ */
+/* Sin Subheader, el .Content baja la altura del Header fijo para no quedar debajo de él */
+@media (max-width: 650px) {
+    :root {
+        --subheader-height: 0rem;
+    }
+    .Subheader {
+        display: none;
+    }
+    .Content {
+        margin-top: var(--header-height);
+    }
 }
