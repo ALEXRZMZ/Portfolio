@@ -11,7 +11,7 @@
         --chip-border-radius: 999px;
         --chip-padding: 8px 24px;
         --chip-border: 1px solid var(--color-black);
-        --chip-text-size: 16px;
+        --chip-text-size: 1rem;
         --web-padding: 0 64px;
         --header-height: 80px;
         --subheader-height: 3.5rem;
@@ -73,7 +73,6 @@ button , label{
     width: 100%;
     /* min-height: 5rem; */
     border-bottom: .0625rem solid var(--color-black);
-    background-color: var(--color-white);
     color: var(--color-black);
     padding: 0 4rem;
 
@@ -115,26 +114,10 @@ button , label{
     display: flex;
     flex-flow: row nowrap;
 
-    gap: 45px;
+    gap: 2.8125rem;
 
 }
-.Header-li--Home {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-
-}
-.Header-li--Proyectos {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Sobremi {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Contacto {
+.Header-li {
     width: fit-content;
     min-height:fit-content;
     /* background-color: red; */
@@ -184,7 +167,7 @@ button , label{
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
-        padding: 1.5rem 64px;
+        padding: 1.5rem 24px;
     }
     /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
@@ -210,7 +193,7 @@ button , label{
 
     height: var(--subheader-height);
     padding: 0 4rem;
-    margin-bottom: var(--header-height);
+    margin-top: var(--header-height);
     border-bottom: .0313rem solid var(--color-black);
 
 
@@ -218,8 +201,6 @@ button , label{
     flex-flow: row nowrap;
     justify-content:space-between;
     align-items: center;
-    position: relative;
-    top: var(--header-height);
     z-index: 0;
     
 }
@@ -237,6 +218,15 @@ button , label{
     height: auto;
     color: var(--color-primary);
 }
+/* En móvil se oculta el Subheader y deja de restarse su altura (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
+    :root {
+        --subheader-height: 0rem;
+    }
+    .Subheader {
+        display: none;
+    }
+}
 
 /* ------------------ Content Style ------------------ */
 
@@ -247,6 +237,18 @@ button , label{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     font-family: 'Outfit', sans-serif;
+}
+@media (max-width: 1164px) {
+    .Content {
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+/* Sin Subheader, el .Content baja la altura del Header fijo para no quedar debajo de él (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
+    .Content {
+        margin-top: var(--header-height);
+    }
 }
 
 /* ------------------ Info Style ------------------ */
@@ -272,20 +274,26 @@ button , label{
     padding: var(--chip-padding);
     border: var(--chip-border);
     border-radius: var(--chip-border-radius);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
 }
-.Info-h2 {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
+/* Título y cuadrado en línea: el cuadrado va tras la última palabra y se apoya en la línea base (hecho con IA, Claude Code) */
+.Info-title {
+    display: block;
+}
+/* El padding reserva 24px para el cuadrado: 8 de separación + 16 de ancho */
+.Info-h1 {
+    display: inline;
+    padding-right: 24px;
     font-size: clamp(2.5rem, 6vh, 4rem);
     font-weight: 700;
-    white-space: nowrap;
 }
+/* El margen negativo lo coloca dentro de esa reserva: así nunca cae solo a otra línea */
 .Info-square {
-    width: 16px;
-    height: 16px;
+    display: inline-block;
+    min-width: 16px;
+    min-height: 16px;
+    margin-left: -16px;
     background-color: var(--color-primary);
 }
 .Info-p {
@@ -307,14 +315,16 @@ button , label{
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    gap: 10px;
+    gap: .625rem;
 }
 .Info-label {
     font-size: 1rem;
     font-weight: 400;
     color: var(--color-grey);
 }
-.Info-link,
+.Info-link{
+    
+}
 .Info-value {
     font-size: 1.5rem;
     font-weight: 600;
@@ -326,7 +336,7 @@ button , label{
 .Info-value--location {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: .625rem;
 }
 .Info-pin {
     width: 13px;
@@ -336,12 +346,12 @@ button , label{
     padding-top: 24px;
     display: flex;
     flex-flow: row wrap;
-    gap: 24px;
+    gap: 1.5rem;
 }
 .Info-rrss-item {
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: .5rem;
     line-height: 1.3;
 }
 .Info-rrss-link {
@@ -351,6 +361,20 @@ button , label{
 .Info-rrss-url {
     font-size: .875rem;
     color: var(--color-grey);
+}
+@media (max-width: 1164px) {
+    .Info-h1 {
+        font-size: 3rem;
+        white-space: normal;
+    }
+}
+@media (max-width: 650px) {
+    .Info {
+        padding: 64px 24px;
+    }
+    .Info-rrss {
+        justify-content: space-between;
+    }
 }
 
 /* ------------------ Form Style ------------------ */
@@ -370,7 +394,7 @@ button , label{
 .Form-title {
     display: flex;
     flex-flow: column nowrap;
-    gap: 16px;
+    gap: 1rem;
 }
 .Form-h2 {
     font-size: 2rem;
@@ -391,7 +415,7 @@ button , label{
 .Form-row {
     display: flex;
     flex-flow: row nowrap;
-    gap: 80px;
+    gap: 5rem;
 }
 .Form-row > .Form-field {
     flex: 1 0 0;
@@ -400,10 +424,10 @@ button , label{
 .Form-field {
     display: flex;
     flex-flow: column nowrap;
-    gap: 16px;
+    gap: 1rem;
 }
 .Form-label {
-    font-size: 11px;
+    font-size: .6875rem;
     font-weight: 600;
     color: var(--form-text);
 }
@@ -462,11 +486,11 @@ button , label{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    gap: 48px;
+    gap: 3rem;
 }
 .Form-legal {
     max-width: 24rem;
-    font-size: 13px;
+    font-size: .8125rem;
     font-weight: 300;
     color: var(--form-text);
 }
@@ -480,8 +504,8 @@ button , label{
 
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 18px;
+    gap: .625rem;
+    font-size: 1.125rem;
     font-weight: 700;
 }
 .Form-submit-icon {
@@ -489,28 +513,18 @@ button , label{
     height: 12px;
 }
 
-@media (max-width: 1164px) {
-    .Content {
-        height: auto;
-        grid-template-columns: minmax(0, 1fr);
-    }
-    .Info-h2 {
-        font-size: 3rem;
-        white-space: normal;
-    }
-}
 @media (max-width: 650px) {
-    .Info,
     .Form {
         padding: 64px 24px;
     }
     .Form-row,
     .Form-footer {
         flex-flow: column nowrap;
-        gap: 48px;
+        gap: 3rem;
     }
-    .Info-rrss {
-        justify-content: space-between;
+    .Form-submit {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -520,9 +534,9 @@ button , label{
     /* Ocupa todas las columnas de la rejilla de .Content (hecho con IA, Claude Code) */
     grid-column: 1 / -1;
     width: 100%;
-    min-height: 204px;
+    min-height: 12.75rem;
     background-color: var(--color-white);
-    padding: 48px 64px;
+    padding: 3rem 4rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -530,7 +544,7 @@ button , label{
     align-items: center;
 }
 .Footer-img {
-    width: 10.9375rem;
+    width: 175px;
     height: auto;
 }
 .Footer-p {
@@ -539,7 +553,7 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 }
 .Footer-ul {
     width: fit-content;
@@ -551,13 +565,13 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 
 }
 /* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
-@media (max-width: 1165px) {
+@media (max-width: 72.8125rem) {
     .Footer {
-        padding: 3rem 1.5rem;
+        padding: 48px 24px;
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
@@ -567,22 +581,22 @@ button , label{
         gap: 1.5rem;
     }
 }
+
 /* ------------------ Picture ------------------ */
 /* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
 }
 
-/* ------------------ Subheader responsive (hecho con IA, Claude Code) ------------------ */
-/* Sin Subheader, el .Content baja la altura del Header fijo para no quedar debajo de él */
-@media (max-width: 650px) {
-    :root {
-        --subheader-height: 0rem;
-    }
-    .Subheader {
-        display: none;
-    }
-    .Content {
-        margin-top: var(--header-height);
+/* ------------------ Padding lateral responsive (hecho con IA, Claude Code) ------------------ */
+/* A 1280px o menos, todas las secciones dejan 24px a cada lado */
+@media (max-width: 1280px) {
+    .Header,
+    .Subheader,
+    .Info,
+    .Form,
+    .Footer {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 }

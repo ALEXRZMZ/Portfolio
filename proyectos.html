@@ -42,16 +42,16 @@
             </ul>
         </nav>
     </header>
-
+    <main class="Main">
     <!-- Estructura HTML Subheader -->
 
     <section class="Subheader">
-        <h1 class="Subheader-h1">· 2026 - portfolio / ARZMZ © </h1>
+        <p class="Subheader-p">· 2026 - portfolio / ARZMZ © </p>
         <div class="Subheader-Location">
             <svg class="Location-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Ubicación">
                 <path d="M16,3C10.5,3,6,7.5,6,13c0,8.4,9,15.5,9.4,15.8c0.2,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2C17,28.5,26,21.4,26,13C26,7.5,21.5,3,16,3z M16,17c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S18.2,17,16,17z" />
             </svg>
-            <h2 class="Location-h2">MADRID ⇀ WORLDWIDE</h2>
+            <p class="Location-p">MADRID ⇀ WORLDWIDE</p>
         </div>
     </section>
 
@@ -62,136 +62,146 @@
 
         <div class="Content-Projects">
             <div class="Projects-title">
-                <h2 class="Projects-h2">Todos mis proyectos<span class="Projects-square">.</span></h2>
+                <h1 class="Projects-h1">Todos mis proyectos<span class="Projects-square" aria-hidden="true">.</span></h1>
                 <p class="Projects-p">Casos de diseño UX/UI, branding y desarrollo frontend. Cada proyecto es una
                     decisión visual que tiene que contar algo.</p>
             </div>
 
             <div class="Projects-nav">
                 <div class="Projects-filter">
-                    <button class="Projects-btn is-active" type="button" title="Ver todos los proyectos" data-filter="todos">Todos</button>
-                    <button class="Projects-btn" type="button" title="Ver proyectos de UX/UI" data-filter="uxui">UX/UI</button>
-                    <button class="Projects-btn" type="button" title="Ver proyectos web" data-filter="web">Web</button>
-                    <button class="Projects-btn" type="button" title="Ver proyectos de branding" data-filter="branding">Branding</button>
-                    <button class="Projects-btn" type="button" title="Ver proyectos editoriales" data-filter="editorial">Editorial</button>
+                    <button class="Projects-btn is-active" type="button" data-filter="todos">Todos</button>
+                    <button class="Projects-btn" type="button" data-filter="uxui">UX/UI</button>
+                    <button class="Projects-btn" type="button" data-filter="web">Web</button>
+                    <button class="Projects-btn" type="button" data-filter="branding">Branding</button>
+                    <button class="Projects-btn" type="button" data-filter="editorial">Editorial</button>
                 </div>
                 <span class="Projects-span">5 proyectos</span>
             </div>
-            <div class="Projects-grid">
+            <ul class="Projects-grid">
 
-                <a href="rediseno-app-hm-hospitales.html" class="Projects-Card Projects-Card--hm" title="Ver el proyecto Rediseño app HM Hospitales" data-category="uxui">
-                    <picture>
-                        <source srcset="img/proyectos/hm-hospitales-flujo-cita.webp" type="image/webp">
-                        <img class="Card-img" src="img/proyectos/hm-hospitales-flujo-cita.jpg" alt="Portada del proyecto Rediseño app HM Hospitales" loading="lazy">
-                    </picture>
-                    <div class="Card-info">
-                        <div class="Card-Title">
-                            <h3 class="Title-h4">REDISEÑO APP HM HOSPITALES</h3>
-                            <div class="Title-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                </svg>
+                <li class="Projects-li">
+                    <a href="rediseno-app-hm-hospitales.html" class="Projects-Card Projects-Card--hm" title="Ver el proyecto Rediseño app HM Hospitales" data-category="uxui">
+                        <picture>
+                            <source srcset="img/proyectos/hm-hospitales-flujo-cita.webp" type="image/webp">
+                            <img class="Card-img" src="img/proyectos/hm-hospitales-flujo-cita.jpg" alt="Portada del proyecto Rediseño app HM Hospitales" loading="lazy">
+                        </picture>
+                        <div class="Card-info">
+                            <div class="Card-Title">
+                                <h2 class="Title-h2">REDISEÑO APP HM HOSPITALES</h2>
+                                <div class="Title-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                </div>
                             </div>
+                            <ul class="Card-chips">
+                                <li class="Card-chip">Redesign</li>
+                                <li class="Card-chip">Wireframes</li>
+                                <li class="Card-chip">Research</li>
+                                <li class="Card-chip">Design System</li>
+                            </ul>
                         </div>
-                        <ul class="Card-chips">
-                            <li class="Card-chip">Redesign</li>
-                            <li class="Card-chip">Wireframes</li>
-                            <li class="Card-chip">Research</li>
-                            <li class="Card-chip">Design System</li>
-                        </ul>
-                    </div>
-                </a>
-                <a href="rediseno-logotipo-bellalux.html" class="Projects-Card Projects-Card--bellalux" title="Ver el proyecto Rediseño logotipo Bellalux" data-category="branding">
-                    <picture>
-                        <source srcset="img/proyectos/bellalux-aplicacion.webp" type="image/webp">
-                        <img class="Card-img" src="img/proyectos/bellalux-aplicacion.jpg" alt="Portada del proyecto Rediseño logotipo Bellalux" loading="lazy">
-                    </picture>
-                    <div class="Card-info">
-                        <div class="Card-Title">
-                            <h3 class="Title-h4">REDISEÑO LOGOTIPO BELLALUX</h3>
-                            <div class="Title-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                </svg>
+                    </a>
+                </li>
+                <li class="Projects-li">
+                    <a href="rediseno-logotipo-bellalux.html" class="Projects-Card Projects-Card--bellalux" title="Ver el proyecto Rediseño logotipo Bellalux" data-category="branding">
+                        <picture>
+                            <source srcset="img/proyectos/bellalux-aplicacion.webp" type="image/webp">
+                            <img class="Card-img" src="img/proyectos/bellalux-aplicacion.jpg" alt="Portada del proyecto Rediseño logotipo Bellalux" loading="lazy">
+                        </picture>
+                        <div class="Card-info">
+                            <div class="Card-Title">
+                                <h2 class="Title-h2">REDISEÑO LOGOTIPO BELLALUX</h2>
+                                <div class="Title-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                </div>
                             </div>
+                            <ul class="Card-chips">
+                                <li class="Card-chip">Branding</li>
+                                <li class="Card-chip">Diseño de logotipo</li>
+                                <li class="Card-chip">Imagen de marca</li>
+                            </ul>
                         </div>
-                        <ul class="Card-chips">
-                            <li class="Card-chip">Branding</li>
-                            <li class="Card-chip">Diseño de logotipo</li>
-                            <li class="Card-chip">Imagen de marca</li>
-                        </ul>
-                    </div>
-                </a>
-                <a href="rediseno-logotipo-circulo-gastronomico.html" class="Projects-Card Projects-Card--circulo" title="Ver el proyecto Rediseño logotipo El Círculo Gastronómico" data-category="branding">
-                    <picture>
-                        <source srcset="img/proyectos/circulo-portada.webp" type="image/webp">
-                        <img class="Card-img" src="img/proyectos/circulo-portada.jpg" alt="Portada del proyecto Rediseño logotipo El Círculo Gastronómico" loading="lazy">
-                    </picture>
-                    <div class="Card-info">
-                        <div class="Card-Title">
-                            <h3 class="Title-h4">REDISEÑO LOGOTIPO EL CÍRCULO GASTRONÓMICO</h3>
-                            <div class="Title-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                </svg>
+                    </a>
+                </li>
+                <li class="Projects-li">
+                    <a href="rediseno-logotipo-circulo-gastronomico.html" class="Projects-Card Projects-Card--circulo" title="Ver el proyecto Rediseño logotipo El Círculo Gastronómico" data-category="branding">
+                        <picture>
+                            <source srcset="img/proyectos/circulo-portada.webp" type="image/webp">
+                            <img class="Card-img" src="img/proyectos/circulo-portada.jpg" alt="Portada del proyecto Rediseño logotipo El Círculo Gastronómico" loading="lazy">
+                        </picture>
+                        <div class="Card-info">
+                            <div class="Card-Title">
+                                <h2 class="Title-h2">REDISEÑO LOGOTIPO EL CÍRCULO GASTRONÓMICO</h2>
+                                <div class="Title-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                </div>
                             </div>
+                            <ul class="Card-chips">
+                                <li class="Card-chip">Branding</li>
+                                <li class="Card-chip">Diseño de logotipo</li>
+                                <li class="Card-chip">Imagen de marca</li>
+                            </ul>
                         </div>
-                        <ul class="Card-chips">
-                            <li class="Card-chip">Branding</li>
-                            <li class="Card-chip">Diseño de logotipo</li>
-                            <li class="Card-chip">Imagen de marca</li>
-                        </ul>
-                    </div>
-                </a>
-                <a href="catalogo-eco-horno.html" class="Projects-Card Projects-Card--ecohorno" title="Ver el proyecto Catálogo Eco Horno" data-category="editorial">
-                    <picture>
-                        <source srcset="img/proyectos/eco-horno-portada.webp" type="image/webp">
-                        <img class="Card-img" src="img/proyectos/eco-horno-portada.jpg" alt="Portada del proyecto Catálogo Eco Horno" loading="lazy">
-                    </picture>
-                    <div class="Card-info">
-                        <div class="Card-Title">
-                            <h3 class="Title-h4">CATÁLOGO ECO HORNO</h3>
-                            <div class="Title-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                </svg>
+                    </a>
+                </li>
+                <li class="Projects-li">
+                    <a href="catalogo-eco-horno.html" class="Projects-Card Projects-Card--ecohorno" title="Ver el proyecto Catálogo Eco Horno" data-category="editorial">
+                        <picture>
+                            <source srcset="img/proyectos/eco-horno-portada.webp" type="image/webp">
+                            <img class="Card-img" src="img/proyectos/eco-horno-portada.jpg" alt="Portada del proyecto Catálogo Eco Horno" loading="lazy">
+                        </picture>
+                        <div class="Card-info">
+                            <div class="Card-Title">
+                                <h2 class="Title-h2">CATÁLOGO ECO HORNO</h2>
+                                <div class="Title-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                </div>
                             </div>
+                            <ul class="Card-chips">
+                                <li class="Card-chip">Editorial</li>
+                                <li class="Card-chip">Maquetación</li>
+                                <li class="Card-chip">Diseño de catálogo</li>
+                            </ul>
                         </div>
-                        <ul class="Card-chips">
-                            <li class="Card-chip">Editorial</li>
-                            <li class="Card-chip">Maquetación</li>
-                            <li class="Card-chip">Diseño de catálogo</li>
-                        </ul>
-                    </div>
-                </a>
-                <a href="diseno-web-portfolio.html" class="Projects-Card Projects-Card--portfolio" title="Ver el proyecto Diseño web portfolio" data-category="web">
-                    <picture>
-                        <source srcset="img/proyectos/portfolio-inicio-escritorio.webp" type="image/webp">
-                        <img class="Card-img" src="img/proyectos/portfolio-inicio-escritorio.jpg" alt="Portada del proyecto Diseño web portfolio" loading="lazy">
-                    </picture>
-                    <div class="Card-info">
-                        <div class="Card-Title">
-                            <h3 class="Title-h4">DISEÑO WEB PORTFOLIO</h3>
-                            <div class="Title-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                </svg>
+                    </a>
+                </li>
+                <li class="Projects-li">
+                    <a href="diseno-web-portfolio.html" class="Projects-Card Projects-Card--portfolio" title="Ver el proyecto Diseño web portfolio" data-category="web">
+                        <picture>
+                            <source srcset="img/proyectos/portfolio-inicio-escritorio.webp" type="image/webp">
+                            <img class="Card-img" src="img/proyectos/portfolio-inicio-escritorio.jpg" alt="Portada del proyecto Diseño web portfolio" loading="lazy">
+                        </picture>
+                        <div class="Card-info">
+                            <div class="Card-Title">
+                                <h2 class="Title-h2">DISEÑO WEB PORTFOLIO</h2>
+                                <div class="Title-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                </div>
                             </div>
+                            <ul class="Card-chips">
+                                <li class="Card-chip">Diseño web</li>
+                                <li class="Card-chip">HTML y CSS</li>
+                                <li class="Card-chip">JavaScript</li>
+                            </ul>
                         </div>
-                        <ul class="Card-chips">
-                            <li class="Card-chip">Diseño web</li>
-                            <li class="Card-chip">HTML y CSS</li>
-                            <li class="Card-chip">JavaScript</li>
-                        </ul>
-                    </div>
-                </a>
+                    </a>
+                </li>
 
-            </div>
+            </ul>
         </div>
         <div class="Marquee">
             <div class="Marquee-container">
@@ -246,34 +256,44 @@
                 <p class="Contact-p">Estoy abierto a nuevas oportunidades, colaboraciones y proyectos freelance. Si te
                     gusta lo que ves, hablemos.</p>
                 <div class="Contact-data">
-                    <span class="Contact-email">alexrmgraphics@gmail.com</span>
+                    <a href="mailto:alexrmgraphics@gmail.com" class="Contact-email" title="Escribir un email a Alejandro Rodríguez">alexrmgraphics@gmail.com</a>
                     <a href="contacto.html" class="Contact-Button" title="Ir a la página de contacto">
                         <span class="Button-span">Escríbeme</span>
                         <span class="Button-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="7.5 7.5 9 9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="7.5 7.5 9 9" aria-hidden="true">
                                 <path d="M8 16L16 8M16 12V8H12" fill="none" stroke="currentColor" stroke-width="1" />
                             </svg>
                         </span>
                     </a>
                     <ul class="Contact-rrss">
-                        <li><a href="https://www.linkedin.com/in/alexrodriguezmu%C3%B1oz/" class="Contact-linkedin" title="Perfil de LinkedIn de Alejandro Rodríguez" target="_blank" rel="noreferrer">LinkedIn</a></li>
-                        <li><a href="https://www.behance.net/alejandrodrigu361" class="Contact-behance" title="Portfolio de Behance de Alejandro Rodríguez" target="_blank" rel="noreferrer">Behance</a></li>
-                        <li><a href="https://github.com/ALEXRZMZ" class="Contact-github" title="Perfil de GitHub de Alejandro Rodríguez" target="_blank" rel="noreferrer">GitHub</a></li>
-                        <li><a href="https://www.fiverr.com/alexrzmz" class="Contact-fiverr" title="Perfil de Fiverr de Alejandro Rodríguez" target="_blank" rel="noreferrer">Fiverr</a></li>
+                        <li><a href="https://www.linkedin.com/in/alexrodriguezmu%C3%B1oz/" class="Contact-linkedin" target="_blank"
+                                rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://www.behance.net/alejandrodrigu361" class="Contact-behance" target="_blank"
+                                rel="noopener noreferrer">Behance</a></li>
+                        <li><a href="https://github.com/ALEXRZMZ" class="Contact-github" target="_blank"
+                                rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.fiverr.com/alexrzmz" class="Contact-fiverr" target="_blank"
+                                rel="noopener noreferrer">Fiverr</a></li>
                     </ul>
                 </div>
             </div>
         </section>
 
     </div>
+</main>
     <footer class="Footer">
-        <img class="Footer-img" src="img/logo-arzmz.svg" alt="ARZMZ Logo" loading="lazy">
+        <img class="Footer-img" src="img/logo-arzmz.svg" alt="Logo de Alejandro Rodríguez" loading="lazy">
         <p class="Footer-p">© 2026 Alejandro Rodríguez. Todos los derechos reservados.</p>
         <ul class="Footer-ul">
-            <li><a href="https://www.linkedin.com/in/alexrodriguezmu%C3%B1oz/" class="Footer-linkedin" title="Perfil de LinkedIn de Alejandro Rodríguez" target="_blank" rel="noreferrer">LINKEDIN</a></li>
-            <li><a href="https://www.behance.net/alejandrodrigu361" class="Footer-behance" title="Portfolio de Behance de Alejandro Rodríguez" target="_blank" rel="noreferrer">BEHANCE</a></li>
-            <li><a href="https://github.com/ALEXRZMZ" class="Footer-github" title="Perfil de GitHub de Alejandro Rodríguez" target="_blank" rel="noreferrer">GITHUB</a></li>
-            <li><a href="https://www.fiverr.com/alexrzmz" class="Footer-fiverr" title="Perfil de Fiverr de Alejandro Rodríguez" target="_blank" rel="noreferrer">FIVERR</a></li>
+            <li><a href="https://www.linkedin.com/in/alexrodriguezmu%C3%B1oz/" class="Footer-linkedin"
+                    title="Perfil de LinkedIn de Alejandro Rodríguez" target="_blank" rel="noreferrer">LINKEDIN</a></li>
+            <li><a href="https://www.behance.net/alejandrodrigu361" class="Footer-behance"
+                    title="Portfolio de Behance de Alejandro Rodríguez" target="_blank" rel="noreferrer">BEHANCE</a>
+            </li>
+            <li><a href="https://github.com/ALEXRZMZ" class="Footer-github"
+                    title="Perfil de GitHub de Alejandro Rodríguez" target="_blank" rel="noreferrer">GITHUB</a></li>
+            <li><a href="https://www.fiverr.com/alexrzmz" class="Footer-fiverr"
+                    title="Perfil de Fiverr de Alejandro Rodríguez" target="_blank" rel="noreferrer">FIVERR</a></li>
         </ul>
     </footer>
 

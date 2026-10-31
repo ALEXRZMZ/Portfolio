@@ -8,10 +8,11 @@
         --color-white: #EEEDF6;
         --color-primary: #5CF87D;
         --color-grey: #454545;
+        --header-height: 5rem;
         --chip-border-radius: 999px;
         --chip-padding: 8px 24px;
         --chip-border: 1px solid var(--color-black);
-        --chip-text-size: 16px
+        --chip-text-size: 1rem
 }
 *{
     margin:0;
@@ -70,7 +71,6 @@ button , label{
     width: 100%;
     /* min-height: 5rem; */
     border-bottom: .0625rem solid var(--color-black);
-    background-color: var(--color-white);
     color: var(--color-black);
     padding: 0 4rem;
 
@@ -112,26 +112,10 @@ button , label{
     display: flex;
     flex-flow: row nowrap;
 
-    gap: 45px;
+    gap: 2.8125rem;
 
 }
-.Header-li--Home {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-
-}
-.Header-li--Proyectos {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Sobremi {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Contacto {
+.Header-li {
     width: fit-content;
     min-height:fit-content;
     /* background-color: red; */
@@ -181,7 +165,7 @@ button , label{
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
-        padding: 1.5rem 64px;
+        padding: 1.5rem 24px;
     }
     /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
@@ -206,7 +190,7 @@ button , label{
     font-family: 'Outfit', sans-serif;
 
     padding: 16px 4rem;
-    margin-bottom: 143px;
+    margin-top: var(--header-height);
     border-bottom: .0313rem solid var(--color-black);
 
 
@@ -214,8 +198,6 @@ button , label{
     flex-flow: row nowrap;
     justify-content:space-between;
     align-items: center;
-    position: relative;
-    top: 80px;
     z-index: 0;
     
 }
@@ -233,6 +215,12 @@ button , label{
     height: auto;
     color: var(--color-primary);
 }
+/* En móvil se oculta el Subheader (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
+    .Subheader {
+        display: none;
+    }
+}
 
 
 
@@ -240,6 +228,15 @@ button , label{
 .Content {
     width: 100%;
     height: fit-content;
+    /* Hueco de 63px bajo el Subheader (hecho con IA, Claude Code) */
+    margin-top: calc(var(--header-height) + var(--subheader-height));
+    padding: 4rem 0;
+}
+/* Sin Subheader, el .Content hereda su margen: la altura del Header fijo más el hueco de 63px (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
+    .Content {
+        margin-top: var(--header-height);
+    }
 }
 .Content-Projects {
     width: 100%;
@@ -257,19 +254,20 @@ button , label{
 
 
 }
-.Projects-h2 {
+.Projects-h1 {
     width: 100%;
     height: fit-content;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 4rem;
+    font-size: clamp(2.25rem, 5vw, 4rem);
 
 }
 .Projects-square {
     font-family: 'Climate Crisis', sans-serif;
     font-weight: 400;
-    font-size: 3rem;
+    /* En em: siempre es el 75% del .Projects-h1 y escala con él (hecho con IA, Claude Code) */
+    font-size: .75em;
 }
 .Projects-p {
     /* Responsive (hecho con IA, Claude): ancho máximo en vez de fijo para que no se salga en móvil */
@@ -279,7 +277,7 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 .Projects-nav {
     width: 100%;
@@ -321,6 +319,18 @@ button , label{
     font-weight: 300;
     font-size: 1rem;
 }
+/* En móvil el filtro y el contador se apilan y los botones saltan de línea (hecho con IA, Claude) */
+@media (max-width: 768px) {
+    .Projects-nav {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .Projects-filter {
+        width: 100%;
+        flex-flow: row wrap;
+    }
+}
 .Projects-grid {
     width: 100%;
     padding: 4rem 0;
@@ -329,6 +339,10 @@ button , label{
     grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-template-rows: repeat(6, 10.25rem);
     gap: 1.25rem;
+}
+/* El li no genera caja: cada tarjeta sigue colocándose en la rejilla y el filtro no deja huecos (hecho con IA, Claude Code) */
+.Projects-li {
+    display: contents;
 }
 .Projects-Card {
     width: 100%;
@@ -364,16 +378,16 @@ button , label{
     z-index: 1;
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: .5rem;
 }
 .Card-Title {
     display: flex;
     flex-flow: row nowrap;
-    gap: 6px;
+    gap: .375rem;
 }
-.Title-h4 {
+.Title-h2 {
     font-family: 'Outfit', sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-white);
 }
@@ -392,7 +406,7 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 10px;
+    font-size: .625rem;
 
 }
 .Card-chip {
@@ -521,12 +535,12 @@ button , label{
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 1.5rem;
     flex: 0 0 auto;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 900;
-    font-size: 139px;
+    font-size: 8.6875rem;
     color: var(--color-white);
 }
 .Marquee-content > * {
@@ -551,6 +565,11 @@ button , label{
         animation-play-state: paused;
     }
 }
+@media (max-width: 870px) {
+    .Marquee {
+        display: none;
+    }
+}
 
 
 /* --------------- Contact section Style ------------------ */
@@ -559,7 +578,7 @@ button , label{
 .Contact {
     width: 100%;
     height: fit-content;
-    padding: 0 4rem 5rem;
+    padding: 0 4rem 80px;
     background-color: var(--color-black);
 
     
@@ -569,11 +588,11 @@ button , label{
 .Contact-h2 {
     width: 100%;
     height: fit-content;
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--color-white);
 }
 
@@ -581,9 +600,9 @@ button , label{
     content: "";
     display: block;
     width: 100%;
-    height: .5008px;
+    height: .0313rem;
     background-color: var(--color-white);
-    margin-top: 48px;
+    margin-top: 3rem;
 }
 
 .Contact-info {
@@ -592,7 +611,7 @@ button , label{
 
 display: grid;
 grid-template-columns: 1.5fr 1fr;
-gap: 320px;
+gap: clamp(2rem, 8vw, 8rem);
 }
 .Contact-p {
     width: 100%;
@@ -600,7 +619,7 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--color-white);
 }
 .Contact-data {
@@ -609,7 +628,7 @@ gap: 320px;
 
     display: flex;
     flex-flow: column nowrap;
-    gap:32px;
+    gap:2rem;
 }
 .Contact-email {
     width: 100%;
@@ -617,7 +636,7 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-decoration: underline;
     color: var(--color-white);
 }
@@ -632,7 +651,6 @@ gap: 320px;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    justify-content: center;
 }
 .Button-span {
     font-family: 'Outfit', sans-serif;
@@ -645,6 +663,7 @@ gap: 320px;
     width: fit-content;
     height: fit-content;
     background-color: var(--color-primary);
+    color: var(--color-black);
     padding: .5rem;
     border-radius: 50%;
 }
@@ -658,14 +677,13 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 1rem;
     text-decoration: underline;
     color: var(--color-white);
 }
-/* Contacto en móvil: una sola columna y redes que pueden saltar de línea (hecho con IA, Claude Code) */
-@media (max-width: 850px) {
+@media (max-width: 68.4375rem) {
     .Contact {
-        padding: 0 1.5rem 5rem;
+        padding: 0 24px 80px;
     }
     .Contact-info {
         grid-template-columns: minmax(0, 1fr);
@@ -675,14 +693,20 @@ gap: 320px;
         flex-flow: row wrap;
     }
 }
+/* Sin Marquee, .Contact recupera el espacio superior que le daba. Va después del de 68.4375rem, cuyo padding lo pondría a 0 (hecho con IA, Claude Code) */
+@media (max-width: 870px) {
+    .Contact {
+        padding-top: 80px;
+    }
+}
 
 /* ---------------Footer section Style ------------------ */
 
 .Footer {
     width: 100%;
-    min-height: 204px;
+    min-height: 12.75rem;
     background-color: var(--color-white);
-    padding: 48px 64px;
+    padding: 3rem 4rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -690,7 +714,7 @@ gap: 320px;
     align-items: center;
 }
 .Footer-img {
-    width: 10.9375rem;
+    width: 175px;
     height: auto;
 }
 .Footer-p {
@@ -699,7 +723,7 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 }
 .Footer-ul {
     width: fit-content;
@@ -711,13 +735,13 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 
 }
 /* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
-@media (max-width: 1165px) {
+@media (max-width: 72.8125rem) {
     .Footer {
-        padding: 3rem 1.5rem;
+        padding: 48px 24px;
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
@@ -727,33 +751,22 @@ gap: 320px;
         gap: 1.5rem;
     }
 }
+
 /* ------------------ Picture ------------------ */
 /* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
 }
 
-/* ------------------ Filtro responsive (hecho con IA, Claude) ------------------ */
-/* En móvil el filtro y el contador se apilan y los botones saltan de línea */
-@media (max-width: 768px) {
-    .Projects-nav {
-        flex-flow: column nowrap;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    .Projects-filter {
-        width: 100%;
-        flex-flow: row wrap;
-    }
-}
-
-/* ------------------ Subheader responsive (hecho con IA, Claude Code) ------------------ */
-/* Sin Subheader, el .Content hereda su margen: la altura del Header fijo más el hueco de 63px */
-@media (max-width: 650px) {
-    .Subheader {
-        display: none;
-    }
-    .Content {
-        margin-top: 143px;
+/* ------------------ Padding lateral responsive (hecho con IA, Claude Code) ------------------ */
+/* A 1280px o menos, todas las secciones dejan 24px a cada lado */
+@media (max-width: 1280px) {
+    .Header,
+    .Subheader,
+    .Content-Projects,
+    .Contact,
+    .Footer {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 }

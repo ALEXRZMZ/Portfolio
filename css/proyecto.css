@@ -8,10 +8,11 @@
         --color-white: #EEEDF6;
         --color-primary: #5CF87D;
         --color-grey: #454545;
+        --header-height: 5rem;
         --chip-border-radius: 999px;
         --chip-padding: 8px 24px;
         --chip-border: 1px solid var(--color-black);
-        --chip-text-size: 16px;
+        --chip-text-size: 1rem;
         --web-padding: 0 64px;
 }
 *{
@@ -71,7 +72,6 @@ button , label{
     width: 100%;
     /* min-height: 5rem; */
     border-bottom: .0625rem solid var(--color-black);
-    background-color: var(--color-white);
     color: var(--color-black);
     padding: 0 4rem;
 
@@ -113,26 +113,10 @@ button , label{
     display: flex;
     flex-flow: row nowrap;
 
-    gap: 45px;
+    gap: 2.8125rem;
 
 }
-.Header-li--Home {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-
-}
-.Header-li--Proyectos {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Sobremi {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Contacto {
+.Header-li {
     width: fit-content;
     min-height:fit-content;
     /* background-color: red; */
@@ -182,7 +166,7 @@ button , label{
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
-        padding: 1.5rem 64px;
+        padding: 1.5rem 24px;
     }
     /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
@@ -207,7 +191,7 @@ button , label{
     font-family: 'Outfit', sans-serif;
 
     padding: 16px 4rem;
-    margin-bottom: 5rem;
+    margin-top: var(--header-height);
     border-bottom: .0313rem solid var(--color-black);
 
 
@@ -215,8 +199,6 @@ button , label{
     flex-flow: row nowrap;
     justify-content:space-between;
     align-items: center;
-    position: relative;
-    top: 80px;
     z-index: 0;
     
 }
@@ -234,7 +216,12 @@ button , label{
     height: auto;
     color: var(--color-primary);
 }
-
+/* En móvil se oculta el Subheader (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
+    .Subheader {
+        display: none;
+    }
+}
 
 /* ------------------ Project Hero Style ------------------ */
 
@@ -243,7 +230,6 @@ button , label{
     width: 100%;
     height: calc(100vh - 80px);
     padding: 40px 4rem;
-    margin-top: calc(80px - 5rem);
     background-color: var(--color-black);
     color: #fff;
     font-family: 'Outfit', sans-serif;
@@ -271,7 +257,7 @@ button , label{
 }
 .ProjectHero-chips {
     display: flex;
-    gap: 39px;
+    gap: 2.4375rem;
     align-items: center;
 }
 .Chip {
@@ -298,21 +284,30 @@ button , label{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    gap: 24px;
+    gap: 1.5rem;
 }
 .ProjectHero-title {
-    font-size: 72px;
+    font-size: 4.5rem;
     font-weight: 700;
     letter-spacing: -1.08px;
     line-height: normal;
 }
 .ProjectHero-tags {
     display: flex;
-    gap: 16px;
-    font-size: 14px;
+    gap: 1rem;
+    font-size: .875rem;
     font-weight: 300;
 }
-
+/* En móvil el título de la portada se reduce para que no se corte (hecho con IA, Claude) */
+@media (max-width: 768px) {
+    .ProjectHero-title {
+        font-size: 2rem;
+        overflow-wrap: break-word;
+    }
+    .ProjectHero {
+        margin-top: 5rem;
+    }
+}
 
 /* ------------------ Summary Style ------------------ */
 
@@ -324,22 +319,22 @@ button , label{
 
     display: flex;
     flex-flow: column nowrap;
-    gap: 40px;
+    gap: 2.5rem;
 }
 .Summary-header {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: flex-end;
 }
 .Summary-number {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     line-height: 1;
     color: #D6D5DD;
 }
 .Summary-title {
     display: flex;
-    gap: 8px;
+    gap: .5rem;
     align-items: center;
 }
 .Summary-dot {
@@ -348,13 +343,13 @@ button , label{
     border-radius: 100px;
     background-color: var(--color-primary);
 }
-.Summary-h3 {
-    font-size: 12px;
+.Summary-h2 {
+    font-size: .75rem;
     font-weight: 600;
 }
 .Summary-body {
     display: flex;
-    gap: 80px;
+    gap: 5rem;
     align-items: flex-start;
 }
 .Summary-list {
@@ -362,12 +357,12 @@ button , label{
     min-width: 0;
     display: flex;
     flex-flow: column nowrap;
-    gap: 34px;
+    gap: 2.125rem;
 }
 .Summary-item {
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: .5rem;
     padding-bottom: 25px;
     font-weight: 600;
     background: url("../img/line-divider.svg") no-repeat left bottom / 100% 1px;
@@ -376,11 +371,11 @@ button , label{
     background: none;
 }
 .Summary-label {
-    font-size: 11px;
+    font-size: .6875rem;
     color: #8F8E94;
 }
-.Summary-value {
-    font-size: 18px;
+.Summary-category {
+    font-size: 1.125rem;
     color: var(--color-black);
 }
 .Summary-content {
@@ -389,10 +384,10 @@ button , label{
     min-width: 0;
     display: flex;
     flex-flow: column nowrap;
-    gap: 62px;
+    gap: 3.875rem;
 }
 .Summary-lead {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600;
     color: #8F8E94;
 }
@@ -416,8 +411,9 @@ button , label{
 }
 .Summary-Text {
     display: flex;
-    gap: 80px;
-    font-size: 19px;
+    flex-flow: row wrap;
+    gap: 5rem;
+    font-size: 1.1875rem;
     font-weight: 300;
     color: #6B6B6F;
 }
@@ -425,7 +421,29 @@ button , label{
     flex: 1 0 0;
     min-width: 0;
 }
-
+/* Por debajo de 1280px la lista de datos y el texto se apilan (hecho con IA, Claude) */
+@media (max-width: 1280px) {
+    .Summary-body {
+        flex-flow: column nowrap;
+        gap: 2.5rem;
+    }
+    .Summary-content {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
+/* En móvil el titular del resumen es más pequeño (hecho con IA, Claude) */
+@media (max-width: 768px) {
+    .Summary-lead {
+        font-size: 1.75rem;
+    }
+}
+/* A 700px o menos los párrafos del resumen se apilan (hecho con IA, Claude Code) */
+@media (max-width: 700px) {
+    .Summary-Text {
+        flex-flow: column nowrap;
+    }
+}
 
 /* ------------------ Challenge Style ------------------ */
 
@@ -441,18 +459,18 @@ button , label{
 }
 .Challenge-header {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: flex-end;
 }
 .Challenge-number {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     line-height: 56px;
     color: #6B6B6F;
 }
 .Challenge-title {
     display: flex;
-    gap: 10px;
+    gap: .625rem;
     align-items: center;
     padding-bottom: 4px;
 }
@@ -462,17 +480,17 @@ button , label{
     border-radius: 100px;
     background-color: var(--color-primary);
 }
-.Challenge-h3 {
-    font-size: 12px;
+.Challenge-h2 {
+    font-size: .75rem;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 1.6px;
     text-transform: uppercase;
-    color: #6B6B6F;
+    color: #B3B2B9;
 }
 .Challenge-body {
     display: flex;
-    gap: 222px;
+    gap: 13.875rem;
     align-items: stretch;
 }
 .Challenge-intro {
@@ -480,7 +498,7 @@ button , label{
     flex-shrink: 0;
 }
 .Challenge-heading {
-    font-size: 68px;
+    font-size: 4.25rem;
     font-weight: 700;
     line-height: 62.56px;
     letter-spacing: -2px;
@@ -496,7 +514,7 @@ button , label{
 }
 .Challenge-text {
     padding-top: 28px;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 300;
     line-height: 28.05px;
     color: rgba(238, 237, 246, 0.45);
@@ -507,22 +525,22 @@ button , label{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
 }
 .Challenge-card {
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: .5rem;
     padding-bottom: 2px;
     border-bottom: 1px dashed rgba(238, 237, 246, 0.12);
 }
 .Challenge-cardTitle {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-white);
 }
 .Challenge-cardText {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 300;
     line-height: 36.3px;
     color: #6B6B6F;
@@ -530,11 +548,11 @@ button , label{
 .Challenge-process {
     display: flex;
     flex-flow: column nowrap;
-    gap: 24px;
+    gap: 1.5rem;
     padding-top: 8px;
 }
 .Challenge-processLabel {
-    font-size: 11px;
+    font-size: .6875rem;
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 1.4px;
@@ -550,7 +568,7 @@ button , label{
     min-width: 0;
     display: flex;
     flex-flow: column nowrap;
-    gap: 12px;
+    gap: .75rem;
     padding: 24px 16px 4px 0;
     position: relative;
 }
@@ -571,12 +589,12 @@ button , label{
 }
 .Challenge-stepNumber {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 20px;
     color: var(--color-primary);
 }
 .Challenge-stepName {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     line-height: 20px;
     color: var(--color-grey);
@@ -588,7 +606,7 @@ button , label{
 
 @media (max-width: 1280px) {
     .Challenge-body {
-        gap: 64px;
+        gap: 4rem;
     }
     .Challenge-intro {
         width: auto;
@@ -604,14 +622,14 @@ button , label{
     }
     .Challenge-body {
         flex-flow: column nowrap;
-        gap: 40px;
+        gap: 2.5rem;
     }
     .Challenge-heading {
-        font-size: 44px;
+        font-size: 2.75rem;
         line-height: 1.05;
     }
     .Challenge-cardText {
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 1.6;
     }
     .Challenge-steps {
@@ -636,18 +654,18 @@ button , label{
 }
 .Documentation-header {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: flex-end;
 }
 .Documentation-number {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     line-height: 56px;
     color: #6B6B6F;
 }
 .Documentation-title {
     display: flex;
-    gap: 10px;
+    gap: .625rem;
     align-items: center;
     padding-bottom: 4px;
 }
@@ -657,29 +675,29 @@ button , label{
     border-radius: 100px;
     background-color: var(--color-primary);
 }
-.Documentation-h3 {
-    font-size: 12px;
+.Documentation-h2 {
+    font-size: .75rem;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 1.6px;
     text-transform: uppercase;
-    color: #6B6B6F;
+    color: #B3B2B9;
 }
 .Documentation-body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 64px;
+    gap: 4rem;
 }
 .Documentation-gallery {
     width: 588px;
     flex-shrink: 0;
     display: flex;
     flex-flow: column nowrap;
-    gap: 28px;
+    gap: 1.75rem;
 }
 .Documentation-label {
-    font-size: 11px;
+    font-size: .6875rem;
     font-weight: 700;
     line-height: 16.5px;
     letter-spacing: 1.4px;
@@ -688,14 +706,14 @@ button , label{
 }
 .Documentation-grid {
     display: flex;
-    gap: 28px;
+    gap: 1.75rem;
 }
 .Documentation-stack {
     flex: 1 0 0;
     min-width: 0;
     display: flex;
     flex-flow: column nowrap;
-    gap: 28px;
+    gap: 1.75rem;
 }
 .Documentation-media {
     background-color: #252525;
@@ -705,7 +723,7 @@ button , label{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
     padding: 0 16px;
 }
 .Documentation-media--tall {
@@ -727,7 +745,7 @@ button , label{
     height: 22px;
 }
 .Documentation-caption {
-    font-size: 11px;
+    font-size: .6875rem;
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 1.6px;
@@ -740,15 +758,15 @@ button , label{
     max-width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    gap: 32px;
+    gap: 2rem;
 }
 .Documentation-intro {
     display: flex;
     flex-flow: column nowrap;
-    gap: 16px;
+    gap: 1rem;
 }
 .Documentation-heading {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 40px;
     color: var(--color-white);
@@ -756,24 +774,24 @@ button , label{
 .Documentation-list {
     display: flex;
     flex-flow: column nowrap;
-    gap: 32px;
+    gap: 2rem;
 }
 .Documentation-item {
     display: flex;
     flex-flow: column nowrap;
-    gap: 16px;
+    gap: 1rem;
 }
 .Documentation-itemTitle {
     width: 331px;
     max-width: 100%;
     padding-bottom: 25px;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-white);
     background: url("../img/line-divider-dark.svg") no-repeat left bottom / 100% 1px;
 }
 .Documentation-itemText {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     color: var(--color-white);
@@ -795,7 +813,7 @@ button , label{
     }
     .Documentation-body {
         flex-flow: column nowrap;
-        gap: 56px;
+        gap: 3.5rem;
     }
     .Documentation-gallery {
         width: 100%;
@@ -807,7 +825,7 @@ button , label{
         flex-flow: column nowrap;
     }
     .Documentation-heading {
-        font-size: 26px;
+        font-size: 1.625rem;
         line-height: 1.25;
     }
 }
@@ -827,22 +845,22 @@ button , label{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 24px;
+    gap: 1.5rem;
 }
 .Solution-index {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
     align-items: flex-end;
 }
 .Solution-number {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     line-height: 56px;
     color: #6B6B6F;
 }
 .Solution-title {
     display: flex;
-    gap: 10px;
+    gap: .625rem;
     align-items: center;
     padding-bottom: 4px;
 }
@@ -852,16 +870,16 @@ button , label{
     border-radius: 100px;
     background-color: var(--color-primary);
 }
-.Solution-h3 {
-    font-size: 12px;
+.Solution-h2 {
+    font-size: .75rem;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 1.6px;
     text-transform: uppercase;
-    color: #6B6B6F;
+    color: #B3B2B9;
 }
 .Solution-heading {
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 57.6px;
     letter-spacing: -2px;
@@ -878,7 +896,7 @@ button , label{
 }
 .Solution-body {
     display: flex;
-    gap: 56px;
+    gap: 3.5rem;
     align-items: flex-start;
 }
 .Solution-decisions {
@@ -886,10 +904,10 @@ button , label{
     min-width: 0;
     display: flex;
     flex-flow: column nowrap;
-    gap: 32px;
+    gap: 2rem;
 }
 .Solution-label {
-    font-size: 11px;
+    font-size: .6875rem;
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 1.4px;
@@ -901,19 +919,19 @@ button , label{
 }
 .Solution-item {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
     align-items: flex-start;
     padding: 20px 0;
     background: url("../img/line-divider-muted.svg") no-repeat left top / 100% 1px;
 }
 .Solution-itemNumber {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 22px;
     color: var(--color-white);
 }
 .Solution-itemText {
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 300;
     line-height: 25.5px;
     color: var(--color-white);
@@ -930,7 +948,7 @@ button , label{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
 }
 .Solution-media--main {
     height: 30rem;
@@ -951,7 +969,7 @@ button , label{
     height: 22px;
 }
 .Solution-caption {
-    font-size: 11px;
+    font-size: .6875rem;
     font-weight: 500;
     line-height: 16.5px;
     letter-spacing: 1.6px;
@@ -961,7 +979,36 @@ button , label{
 }
 .Solution-gallery {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
+}
+@media (max-width: 768px) {
+    .Solution {
+        padding: 64px 1.5rem;
+    }
+    .Solution-header {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+    .Solution-heading {
+        font-size: 2.75rem;
+        line-height: 1.05;
+        text-align: left;
+    }
+    .Solution-body,
+    .Solution-gallery {
+        flex-flow: column nowrap;
+    }
+    .Solution-media,
+    .Solution-media--main {
+        flex: none;
+        width: 100%;
+    }
+    .Solution-media {
+        height: 22rem;
+    }
+    .Solution-media--main {
+        height: 320px;
+    }
 }
 
 /* ------------------ Next Project Style ------------------ */
@@ -970,7 +1017,7 @@ button , label{
     padding: 4rem;
     display: flex;
     flex-flow: column nowrap;
-    gap: 32px;
+    gap: 2rem;
     background: url("../img/line-divider-dark.svg") no-repeat left 4rem top 4rem / calc(100% - 8rem) 1px;
 }
 .NextProject-top {
@@ -981,7 +1028,7 @@ button , label{
 }
 .NextProject-label,
 .NextProject-all {
-    font-size: 12px;
+    font-size: .75rem;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 1.6px;
@@ -1030,13 +1077,13 @@ button , label{
 }
 .NextProject-chips {
     display: flex;
-    gap: 8px;
+    gap: .5rem;
     align-items: center;
 }
 .NextProject-chip {
     padding: 4px 12px;
     border-radius: 999px;
-    font-size: 11px;
+    font-size: .6875rem;
     line-height: 16.5px;
 }
 .NextProject-chip--primary {
@@ -1055,10 +1102,10 @@ button , label{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
 }
 .NextProject-title {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 600;
     line-height: 27.5px;
     color: var(--color-white);
@@ -1080,33 +1127,6 @@ button , label{
 }
 
 @media (max-width: 768px) {
-    .Solution {
-        padding: 64px 1.5rem;
-    }
-    .Solution-header {
-        flex-flow: column nowrap;
-        align-items: flex-start;
-    }
-    .Solution-heading {
-        font-size: 44px;
-        line-height: 1.05;
-        text-align: left;
-    }
-    .Solution-body,
-    .Solution-gallery {
-        flex-flow: column nowrap;
-    }
-    .Solution-media,
-    .Solution-media--main {
-        flex: none;
-        width: 100%;
-    }
-    .Solution-media {
-        height: 22rem;
-    }
-    .Solution-media--main {
-        height: 320px;
-    }
     .NextProject {
         padding: 2rem 0 0;
         background-position: left top;
@@ -1115,7 +1135,7 @@ button , label{
     .NextProject-top {
         flex-flow: column nowrap;
         align-items: flex-start;
-        gap: 8px;
+        gap: .5rem;
     }
 }
 
@@ -1123,9 +1143,9 @@ button , label{
 
 .Footer {
     width: 100%;
-    min-height: 204px;
+    min-height: 12.75rem;
     background-color: var(--color-white);
-    padding: 48px 64px;
+    padding: 3rem 4rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -1133,7 +1153,7 @@ button , label{
     align-items: center;
 }
 .Footer-img {
-    width: 10.9375rem;
+    width: 175px;
     height: auto;
 }
 .Footer-p {
@@ -1142,7 +1162,7 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 }
 .Footer-ul {
     width: fit-content;
@@ -1154,13 +1174,13 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 
 }
 /* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
-@media (max-width: 1165px) {
+@media (max-width: 72.8125rem) {
     .Footer {
-        padding: 3rem 1.5rem;
+        padding: 48px 24px;
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
@@ -1299,45 +1319,6 @@ picture {
     color: var(--color-white);
 }
 
-/* ------------------ Resumen responsive (hecho con IA, Claude) ------------------ */
-/* Por debajo de 1280px la lista de datos y el texto se apilan */
-@media (max-width: 1280px) {
-    .Summary-body {
-        flex-flow: column nowrap;
-        gap: 2.5rem;
-    }
-    .Summary-content {
-        flex: 1 1 auto;
-        width: 100%;
-    }
-}
-/* En móvil el titular del resumen es más pequeño */
-@media (max-width: 768px) {
-    .Summary-lead {
-        font-size: 1.75rem;
-    }
-}
-
-/* ------------------ Portada de proyecto responsive (hecho con IA, Claude) ------------------ */
-/* En móvil el título de la portada se reduce para que no se corte */
-@media (max-width: 768px) {
-    .ProjectHero-title {
-        font-size: 2rem;
-        overflow-wrap: break-word;
-    }
-}
-
-/* ------------------ Subheader responsive (hecho con IA, Claude Code) ------------------ */
-/* Sin Subheader, la portada baja la altura del Header fijo para no quedar debajo de él */
-@media (max-width: 650px) {
-    .Subheader {
-        display: none;
-    }
-    .ProjectHero {
-        margin-top: 5rem;
-    }
-}
-
 /* ------------------ Portada de proyecto: chips arriba (hecho con IA, Claude) ------------------ */
 /* El margen automático empuja el bloque de título al fondo y deja los chips arriba */
 .ProjectHero-info {
@@ -1352,4 +1333,21 @@ picture {
     min-height: 0;
     margin-top: 1rem;
     object-fit: contain;
+}
+
+/* ------------------ Padding lateral responsive (hecho con IA, Claude Code) ------------------ */
+/* A 1280px o menos, todas las secciones dejan 24px a cada lado */
+@media (max-width: 1280px) {
+    .Header,
+    .Subheader,
+    .ProjectHero,
+    .Summary,
+    .Challenge,
+    .Documentation,
+    .Solution,
+    .NextProject,
+    .Footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }

@@ -9,12 +9,12 @@
         --color-primary: #5CF87D;
         --color-grey: #454545;
         /* Alturas de cabecera para el hero (hecho con IA, Claude Code) */
-        --header-height: 5rem;
-        --subheader-height: 3.375rem;
-        --chip-border-radius: 62.4375rem;
-        --chip-padding: .5rem 1.5rem;
-        --chip-border: .0625rem solid var(--color-black);
-        --chip-text-size: 1rem
+        --header-height: 80px;
+        --subheader-height: 54px;
+        --chip-border-radius: 999px;
+        --chip-padding: 8px 24px;
+        --chip-border: 1px solid var(--color-black);
+        --chip-text-size: .875rem;
 }
 *{
     margin:0;
@@ -71,11 +71,10 @@ button , label{
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     width: 100%;
-    /* min-height: 80px; */
-    border-bottom: 1px solid var(--color-black);
-    background-color: var(--color-white);
+    /* min-height: 5rem; */
+    border-bottom: .0625rem solid var(--color-black);
     color: var(--color-black);
-    padding: 0 64px;
+    padding: 0 4rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -86,8 +85,8 @@ button , label{
     z-index: 2;
 
     background: rgba(238, 237, 246, 0.578);
-    backdrop-filter: blur(26px);
-    -webkit-backdrop-filter: blur(26px);
+    backdrop-filter: blur(1.625rem);
+    -webkit-backdrop-filter: blur(1.625rem);
 
 }
 
@@ -101,7 +100,7 @@ button , label{
 }
 
 .Header-img {
-    width: 10.9375rem;
+    width: 175px;
     height: auto;
 }
 .Header-nav {
@@ -118,23 +117,7 @@ button , label{
     gap: 2.8125rem;
 
 }
-.Header-li--Home {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-
-}
-.Header-li--Proyectos {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Sobremi {
-    width: fit-content;
-    min-height:fit-content;
-    /* background-color: red; */
-}
-.Header-li--Contacto {
+.Header-li {
     width: fit-content;
     min-height:fit-content;
     /* background-color: red; */
@@ -152,14 +135,14 @@ button , label{
 }
 /* Iconos del botón: por defecto se ve el de abrir (código propuesto por IA, Claude) */
 .Header-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 }
 .Header-icon--close {
     display: none;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 768px) {
     /* En móvil se muestra el botón (código propuesto por IA, Claude) */
     .Header-button {
         display: flex;
@@ -176,7 +159,7 @@ button , label{
         max-height: 0;
 
         background-color: var(--color-white);
-        border-bottom: 1px solid var(--color-black);
+        border-bottom: .0625rem solid var(--color-black);
         transition: max-height .3s ease;
     }
     .Header-ul {
@@ -184,11 +167,11 @@ button , label{
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
-        padding: 1.5rem 64px;
+        padding: 24px 24px;
     }
     /* Menú abierto (clase que añade el JS) (código propuesto por IA, Claude) */
     .Header-nav.is-open {
-        max-height: 20rem;
+        max-height: 320px;
     }
     /* Botón con el menú abierto: se cambia el icono (código propuesto por IA, Claude) */
     .Header-button.is-open .Header-icon--open {
@@ -208,18 +191,15 @@ button , label{
     color: var(--color-black);
     font-family: 'Outfit', sans-serif;
 
-    padding: 1rem 64px;
-    /* Compensa el top: el .Hero empieza justo donde acaba el Subheader (hecho con IA, Claude Code) */
-    margin-bottom: var(--header-height);
-    border-bottom: .5008px solid var(--color-black);
+    padding: 16px 4rem;
+    margin-top: var(--header-height);
+    border-bottom: .0313rem solid var(--color-black);
 
 
     display:flex;
     flex-flow: row nowrap;
     justify-content:space-between;
     align-items: center;
-    position: relative;
-    top: var(--header-height);
     z-index: 0;
     
 }
@@ -229,22 +209,19 @@ button , label{
 
     display: flex;
     flex-flow: row nowrap;
-    gap: 8px;
+    gap: .5rem;
     
 }
 .Location-img{
-    width: 20px;
+    width: 1.25rem;
     height: auto;
     color: var(--color-primary);
 }
 
-/* Sin Subheader, el .Hero baja la altura del Header fijo para no quedar debajo de él (hecho con IA, Claude Code) */
-@media (max-width: 650px) {
+/* En móvil se oculta el Subheader (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
     .Subheader {
         display: none;
-    }
-    .Hero {
-        margin-top: var(--header-height);
     }
 }
 
@@ -254,14 +231,13 @@ button , label{
     width: 100%;
     height: calc(100vh - var(--header-height) - var(--subheader-height));
     /* En ventanas bajas evita que el overflow recorte el botón (hecho con IA, Claude Code) */
-    min-height: 42rem;
-    padding: 7rem 64px 7.5rem;
-    /* background-color: green; */
+    min-height: 672px;
+    padding: 112px 4rem 120px;
 
     display: grid;
-    grid-template-columns: 53.8125rem 1fr;
+    grid-template-columns: 861px 1fr;
     /* La fila encoge con el .Hero para que el texto siga centrado en ventanas bajas (hecho con IA, Claude Code) */
-    grid-template-rows: minmax(0, 42rem);
+    grid-template-rows: minmax(0, 672px);
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -334,7 +310,7 @@ button , label{
     width: fit-content;
 
     padding: var(--chip-padding);
-    border-radius: 50px;
+    border-radius: 3.125rem;
     background-color: var(--color-primary);
     color: var(--color-black);
 
@@ -343,22 +319,22 @@ button , label{
     font-size: var(--chip-text-size);
     cursor: pointer;
 }
-/* Caja del retrato del marco: su alto es un % del .Hero (96.5% = 913px a 1920x1080) y el ancho
+/* Caja del retrato del marco: su alto es un % del .Hero (96.5% = 57.0625rem a 1920x1080) y el ancho
    sale de la proporción de la imagen. Anclada a la esquina inferior derecha de la sección
    para que apoye siempre en el .Content, sea cual sea el alto de ventana (hecho con IA, Claude Code) */
 .Hero-col--right {
     position: absolute;
-    right: .5625rem;
+    right: 9px;
     bottom: 0;
     height: 96.5%;
     aspect-ratio: 786 / 904;
 }
-/* Hero sin retrato: solo el texto, a todo el ancho (hecho con IA, Claude Code) */
-@media (max-width: 1450px) {
+/* Hero sin retrato: solo el texto, a todo el ancho */
+@media (max-width: 90.625rem) {
     .Hero {
         height: auto;
         min-height: 0;
-        padding: 3rem 4rem;
+        padding: 48px 64px;
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: auto;
     }
@@ -382,6 +358,18 @@ button , label{
         display: none;
     }
 }
+/* Hero con márgenes más estrechos */
+@media (max-width: 80rem) {
+    .Hero {
+        padding: 48px 24px;
+    }
+}
+/* Sin Subheader, el .Hero baja la altura del Header fijo para no quedar debajo de él (hecho con IA, Claude Code) */
+@media (max-width: 768px) {
+    .Hero {
+        margin-top: var(--header-height);
+    }
+}
 
 /* ------------------ Rest of the page Style ------------------ */
 
@@ -398,14 +386,14 @@ button , label{
     width: 100%;
     height: fit-content;
     background-color: var(--color-black);
-    padding: 88px 64px;
+    padding: 5.5rem 4rem;
 
 
     color: var(--color-white);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24.0625rem;
+    gap: clamp(2rem, 10vw, 8rem);
 
 }
 .Career-col--left {
@@ -435,7 +423,7 @@ button , label{
     flex-flow: column nowrap;
     gap: .5rem
 }
-/* Divisorias: centradas en el gap de 1.5rem que separa los bloques */
+/* Divisorias: centradas en el gap de 24px que separa los bloques */
 .Career-timeline--1,
 .Career-timeline--2 {
     position: relative;
@@ -445,10 +433,10 @@ button , label{
     content: "";
     position: absolute;
     left: 0;
-    bottom: -0.75rem;
+    bottom: -12px;
 
     width: 100%;
-    height: .5008px;
+    height: .0313rem;
     background-color: var(--color-white);
 }
 .Career-Title {
@@ -463,24 +451,35 @@ button , label{
     font-size: 1.25rem;
 }
 .Title-date {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: .875rem;
+    font-weight: 500;
 }
 .Career-detail {
     font-size: 1rem;
     font-weight: 300;
+}
+/* Trayectoria en móvil: una columna y márgenes más estrechos */
+@media (max-width: 80rem) {
+    .Content-Career {
+        padding: 64px 24px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3rem;
+    }
+    .Career-Title {
+        gap: 1rem;
+    }
 }
 
 /* ------------------ Projects Grid Style ------------------ */
 
 .Projects {
     font-family: 'Outfit', sans-serif;
-    padding: 0 64px;
-    margin-bottom: 5rem;
+    padding: 0 4rem;
+    margin-bottom: 80px;
 
 }
 .Projects-title {
-    margin-bottom: 56px;
+    margin-bottom: 3.5rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -490,7 +489,7 @@ button , label{
     color: var(--color-white);
     
 }
-.Projects-h3 {
+.Projects-h2 {
     font-size: 2.25rem;
     font-weight: 500;
 }
@@ -512,24 +511,14 @@ button , label{
     width: fit-content;
     height: fit-content;
     background-color: var(--color-primary);
-    padding: .5rem;
+    color: var(--color-black);
+    padding: 8px;
     border-radius: 50%;
 }
-/* Trayectoria y proyectos en móvil: una columna y márgenes más estrechos (hecho con IA, Claude Code) */
-@media (max-width: 1280px) {
-    .Hero {
-        padding: 3rem 1.5rem;
-    }
-    .Content-Career {
-        padding: 4rem 1.5rem;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 3rem;
-    }
-    .Career-Title {
-        gap: 1rem;
-    }
+/* Proyectos en móvil: márgenes más estrechos (hecho con IA, Claude Code) */
+@media (max-width: 80rem) {
     .Projects {
-        padding: 0 1.5rem;
+        padding: 0 24px;
     }
     .Projects-title {
         flex-flow: row wrap;
@@ -544,12 +533,12 @@ button , label{
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
-@media (max-width: 1100px) {
+@media (max-width: 68.75rem) {
     .Projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .Projects-grid {
         grid-template-columns: 1fr;
     }
@@ -557,10 +546,9 @@ button , label{
 .Projects-Card {
     width: 100%;
     aspect-ratio: 385 / 480;
-    border-radius: 1rem;
+    border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 2rem;
-    padding: 16px;
+    padding: 1rem;
 
     position: relative;
     display: flex;
@@ -588,21 +576,21 @@ button , label{
     z-index: 1;
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: .5rem;
 }
 .Card-Title {
     display: flex;
     flex-flow: row nowrap;
-    gap: 6px;
+    gap: .375rem;
 }
-.Title-h4 {
-    font-size: 18px;
+.Title-h3 {
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-white);
 }
 .Title-arrow {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: var(--color-primary);
     border-radius: 50%;
 
@@ -615,19 +603,19 @@ button , label{
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 10px;
+    font-size: .625rem;
 
 }
 .Card-chip {
     width: fit-content;
     min-height: fit-content;
-    padding: 4px 8px;
+    padding: .25rem .5rem;
     background-color: rgba(30, 30, 30, 65%);
 
     color: var(--color-white);
-    border: .0625rem solid rgba(130, 130, 130, 100);
+    border: 1px solid rgba(130, 130, 130, 100);
     border-radius: var(--chip-border-radius);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(.125rem);
 }
 
 
@@ -646,25 +634,25 @@ button , label{
 }
 .Marquee-content {
     width: max-content;
-    height: 175px;
+    height: 10.9375rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 1.5rem;
     flex: 0 0 auto;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 900;
-    font-size: 139px;
+    font-size: 8.6875rem;
     color: var(--color-white);
 }
 .Marquee-content > * {
     flex: 0 0 auto;
 }
 .Marquee-content svg {
-    width: 75px;
-    height: 68px;
+    width: 4.6875rem;
+    height: 4.25rem;
 }
 
 @keyframes marquee-scroll {
@@ -681,6 +669,12 @@ button , label{
         animation-play-state: paused;
     }
 }
+/* A 870px o menos se oculta el Marquee (hecho con IA, Claude Code) */
+@media (max-width: 870px) {
+    .Marquee {
+        display: none;
+    }
+}
 
 
 /* --------------- Contact section Style ------------------ */
@@ -689,7 +683,7 @@ button , label{
 .Contact {
     width: 100%;
     height: fit-content;
-    padding: 0 64px 5rem;
+    padding: 0 4rem 80px;
 
     
     display: flex;
@@ -698,11 +692,11 @@ button , label{
 .Contact-h2 {
     width: 100%;
     height: fit-content;
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--color-white);
 }
 
@@ -710,9 +704,9 @@ button , label{
     content: "";
     display: block;
     width: 100%;
-    height: .5008px;
+    height: .0313rem;
     background-color: var(--color-white);
-    margin-top: 48px;
+    margin-top: 3rem;
 }
 
 .Contact-info {
@@ -721,7 +715,7 @@ button , label{
 
 display: grid;
 grid-template-columns: 1.5fr 1fr;
-gap: 320px;
+gap: clamp(2rem, 8vw, 8rem);
 }
 .Contact-p {
     width: 100%;
@@ -729,7 +723,7 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--color-white);
 }
 .Contact-data {
@@ -738,7 +732,7 @@ gap: 320px;
 
     display: flex;
     flex-flow: column nowrap;
-    gap:32px;
+    gap:2rem;
 }
 .Contact-email {
     width: 100%;
@@ -746,7 +740,7 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-decoration: underline;
     color: var(--color-white);
 }
@@ -778,14 +772,14 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 1rem;
     text-decoration: underline;
     color: var(--color-white);
 }
 /* Contacto en móvil: una sola columna y redes que pueden saltar de línea (hecho con IA, Claude Code) */
-@media (max-width: 1095px) {
+@media (max-width: 68.4375rem) {
     .Contact {
-        padding: 0 1.5rem 5rem;
+        padding: 0 24px 80px;
     }
     .Contact-info {
         grid-template-columns: minmax(0, 1fr);
@@ -800,9 +794,9 @@ gap: 320px;
 
 .Footer {
     width: 100%;
-    min-height: 204px;
+    min-height: 12.75rem;
     background-color: var(--color-white);
-    padding: 48px 64px;
+    padding: 3rem 4rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -810,7 +804,7 @@ gap: 320px;
     align-items: center;
 }
 .Footer-img {
-    width: 10.9375rem;
+    width: 175px;
     height: auto;
 }
 .Footer-p {
@@ -819,7 +813,7 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 }
 .Footer-ul {
     width: fit-content;
@@ -831,13 +825,13 @@ gap: 320px;
 
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: .75rem;
 
 }
 /* Footer estrecho: apilado y con los enlaces en una fila que puede saltar de línea (hecho con IA, Claude Code) */
-@media (max-width: 1165px) {
+@media (max-width: 72.8125rem) {
     .Footer {
-        padding: 3rem 1.5rem;
+        padding: 48px 24px;
         flex-flow: column nowrap;
         align-items: flex-start;
         gap: 1.5rem;
@@ -852,4 +846,19 @@ gap: 320px;
 /* El contenedor picture no genera caja: la imagen se comporta como hija directa de su bloque (hecho con IA, Claude) */
 picture {
     display: contents;
+}
+
+/* ------------------ Padding lateral responsive (hecho con IA, Claude Code) ------------------ */
+/* A 1280px o menos, todas las secciones dejan 24px a cada lado */
+@media (max-width: 1280px) {
+    .Header,
+    .Subheader,
+    .Hero,
+    .Content-Career,
+    .Projects,
+    .Contact,
+    .Footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
